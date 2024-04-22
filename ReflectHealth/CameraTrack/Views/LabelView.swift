@@ -9,17 +9,13 @@ import SwiftUI
 
 struct LabelView: View {
     @State internal var vm = LabelViewModel()
-    @State private var imageData: Data? = nil
-    @State internal var showCamera: Bool = false
-    @State internal var placeholderString: String = "Add notes here ..."
-    @State internal var textEditorText: String = "Add notes here ..."
     @FocusState internal var textEditorInFocus: Bool
-    
+
     var body: some View {
         NavigationStack {
             VStack {
 //                if let uiImage = UIImage(named: "pikachu") {
-                if let imageData, let uiImage = UIImage(data: imageData) {
+                if let imageData = vm.imageData, let uiImage = UIImage(data: imageData) {
                     
                     if !textEditorInFocus {
                         CanvasToolsView(vm: $vm)
@@ -39,7 +35,7 @@ struct LabelView: View {
                     toolbarCameraButton
                 }
             }
-            .fullScreenCamera(isPresented: $showCamera, imageData: $imageData)
+            .fullScreenCamera(isPresented: $vm.showCamera, imageData: $vm.imageData)
         }
     }
 }

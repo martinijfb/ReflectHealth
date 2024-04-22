@@ -9,11 +9,11 @@ import SwiftUI
 
 extension LabelView {
     internal func displayedImage(_ uiImage: UIImage) -> some View {
-            Image(uiImage: uiImage)
-                .resizable()
-                .scaledToFit()
-                .overlay(
-                    textEditorInFocus ? nil :
+        Image(uiImage: uiImage)
+            .resizable()
+            .scaledToFit()
+            .overlay(
+                textEditorInFocus ? nil :
                     GeometryReader { imageGeometry in
                         CanvasView(
                             canvasView: $vm.canvasView,
@@ -22,14 +22,14 @@ extension LabelView {
                             color: UIColor(vm.selectedColor)
                         )
                     }
-                )
-                .clipShape(RoundedRectangle(cornerRadius: 10))
-                .padding(.bottom)
-        }
+            )
+            .clipShape(RoundedRectangle(cornerRadius: 10))
+            .padding(.bottom)
+    }
     
     internal var toolbarCameraButton: some View {
         Button {
-            showCamera = true
+            vm.openCamera()
         } label: {
             Image(systemName: "camera.fill")
         }
@@ -38,7 +38,7 @@ extension LabelView {
     internal var openCameraButton: some View {
         VStack {
             Button {
-                showCamera = true
+                vm.openCamera()
             } label: {
                 Image(systemName: "camera.aperture")
                     .resizable()
@@ -56,29 +56,37 @@ extension LabelView {
     
     @ViewBuilder
     internal func textEditorSection() -> some View {
-        HStack {
-            TextEditor(text: self.$textEditorText)
-                    .focused($textEditorInFocus)
-                    .foregroundStyle(self.textEditorText == placeholderString ? .secondary : .primary)
-                          .onTapGesture {
-                            if self.textEditorText == placeholderString {
-                              self.textEditorText = ""
-                            }
-                          }
-                          .frame(height: 80)
-                          .colorMultiply(Color(uiColor: .systemGray6))
-                      .clipShape(RoundedRectangle(cornerRadius: 10.0))
-            
-            if textEditorInFocus {
-                Button {
-                    textEditorInFocus = false
-                } label: {
-                    Image(systemName: "checkmark.circle.fill")
-                        .font(.largeTitle)
-                }
+        VStack {
+            HStack {
+                Text("Notes")
+                    .fontWeight(.semibold)
+                Spacer()
             }
-
+            HStack {
+                TextEditor(text: $vm.textEditorText)
+                    .focused($textEditorInFocus)
+                    .foregroundStyle(vm.textEditorText == vm.placeholderString ? .secondary : .primary)
+                    .onTapGesture {
+                        vm.clearTextEditor()
+                    }
+                    .frame(height: 80)
+                    .colorMultiply(Color(uiColor: .systemGray6))
+                    .clipShape(RoundedRectangle(cornerRadius: 10.0))
+                
+                if textEditorInFocus {
+                    Button {
+                        textEditorInFocus = false
+                    } label: {
+                        Image(systemName: "checkmark.circle.fill")
+                            .font(.largeTitle)
+                    }
+                }
+                
+            }
         }
     }
+}
 
+#Preview {
+    LabelView()
 }
