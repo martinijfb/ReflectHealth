@@ -1,0 +1,451 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		5BC166852BD68FB00020611B /* ReflectHealthApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC166842BD68FB00020611B /* ReflectHealthApp.swift */; };
+		5BC166872BD68FB00020611B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC166862BD68FB00020611B /* ContentView.swift */; };
+		5BC166892BD68FB40020611B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5BC166882BD68FB40020611B /* Assets.xcassets */; };
+		5BC1668C2BD68FB40020611B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5BC1668B2BD68FB40020611B /* Preview Assets.xcassets */; };
+		5BC166962BD690E70020611B /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC166952BD690E70020611B /* CameraView.swift */; };
+		5BC166982BD691180020611B /* CameraViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC166972BD691180020611B /* CameraViewModel.swift */; };
+		5BC1669A2BD6914D0020611B /* CameraView+Buttons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC166992BD6914D0020611B /* CameraView+Buttons.swift */; };
+		5BC1669C2BD691690020611B /* CameraView+ControlBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC1669B2BD691690020611B /* CameraView+ControlBar.swift */; };
+		5BC1669E2BD691B90020611B /* LabelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC1669D2BD691B90020611B /* LabelView.swift */; };
+		5BC166A02BD691F80020611B /* CameraPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC1669F2BD691F80020611B /* CameraPreview.swift */; };
+		5BC166A22BD692150020611B /* ControlButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC166A12BD692150020611B /* ControlButtonView.swift */; };
+		5BC166A42BD6923D0020611B /* View+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC166A32BD6923D0020611B /* View+.swift */; };
+		5BC166A62BD692990020611B /* LabelViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC166A52BD692990020611B /* LabelViewModel.swift */; };
+		5BC166A82BD6930F0020611B /* ToolType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC166A72BD6930F0020611B /* ToolType.swift */; };
+		5BC166AA2BD6933D0020611B /* CanvasView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC166A92BD6933D0020611B /* CanvasView.swift */; };
+		5BC166AC2BD6969B0020611B /* CanvasToolsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC166AB2BD6969B0020611B /* CanvasToolsView.swift */; };
+		5BC166AE2BD6A1150020611B /* LabelView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC166AD2BD6A1150020611B /* LabelView+.swift */; };
+		5BC166B02BD6A4700020611B /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5BC166AF2BD6A4700020611B /* Launch Screen.storyboard */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		5BC166812BD68FB00020611B /* ReflectHealth.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ReflectHealth.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		5BC166842BD68FB00020611B /* ReflectHealthApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReflectHealthApp.swift; sourceTree = "<group>"; };
+		5BC166862BD68FB00020611B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		5BC166882BD68FB40020611B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		5BC1668B2BD68FB40020611B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		5BC166952BD690E70020611B /* CameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraView.swift; sourceTree = "<group>"; };
+		5BC166972BD691180020611B /* CameraViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewModel.swift; sourceTree = "<group>"; };
+		5BC166992BD6914D0020611B /* CameraView+Buttons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CameraView+Buttons.swift"; sourceTree = "<group>"; };
+		5BC1669B2BD691690020611B /* CameraView+ControlBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CameraView+ControlBar.swift"; sourceTree = "<group>"; };
+		5BC1669D2BD691B90020611B /* LabelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelView.swift; sourceTree = "<group>"; };
+		5BC1669F2BD691F80020611B /* CameraPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraPreview.swift; sourceTree = "<group>"; };
+		5BC166A12BD692150020611B /* ControlButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlButtonView.swift; sourceTree = "<group>"; };
+		5BC166A32BD6923D0020611B /* View+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+.swift"; sourceTree = "<group>"; };
+		5BC166A52BD692990020611B /* LabelViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelViewModel.swift; sourceTree = "<group>"; };
+		5BC166A72BD6930F0020611B /* ToolType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolType.swift; sourceTree = "<group>"; };
+		5BC166A92BD6933D0020611B /* CanvasView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanvasView.swift; sourceTree = "<group>"; };
+		5BC166AB2BD6969B0020611B /* CanvasToolsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanvasToolsView.swift; sourceTree = "<group>"; };
+		5BC166AD2BD6A1150020611B /* LabelView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LabelView+.swift"; sourceTree = "<group>"; };
+		5BC166AF2BD6A4700020611B /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
+		5BC166B12BD6A7860020611B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		5BC1667E2BD68FB00020611B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		5B1B61E72BD6B63A00CC6091 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				5BC1669D2BD691B90020611B /* LabelView.swift */,
+				5BC166AD2BD6A1150020611B /* LabelView+.swift */,
+				5BC166952BD690E70020611B /* CameraView.swift */,
+				5BC166992BD6914D0020611B /* CameraView+Buttons.swift */,
+				5BC1669B2BD691690020611B /* CameraView+ControlBar.swift */,
+				5BC1669F2BD691F80020611B /* CameraPreview.swift */,
+				5BC166A92BD6933D0020611B /* CanvasView.swift */,
+				5BC166AB2BD6969B0020611B /* CanvasToolsView.swift */,
+				5BC166A12BD692150020611B /* ControlButtonView.swift */,
+				5BC166A32BD6923D0020611B /* View+.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		5B1B61E82BD6B64300CC6091 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				5BC166A72BD6930F0020611B /* ToolType.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		5B1B61E92BD6B64A00CC6091 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				5BC166A52BD692990020611B /* LabelViewModel.swift */,
+				5BC166972BD691180020611B /* CameraViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		5BC166782BD68FB00020611B = {
+			isa = PBXGroup;
+			children = (
+				5BC166832BD68FB00020611B /* ReflectHealth */,
+				5BC166822BD68FB00020611B /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		5BC166822BD68FB00020611B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				5BC166812BD68FB00020611B /* ReflectHealth.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		5BC166832BD68FB00020611B /* ReflectHealth */ = {
+			isa = PBXGroup;
+			children = (
+				5BC166B12BD6A7860020611B /* Info.plist */,
+				5BC166932BD6901E0020611B /* Core */,
+				5BC166942BD690AD0020611B /* CameraTrack */,
+				5BC166882BD68FB40020611B /* Assets.xcassets */,
+				5BC1668A2BD68FB40020611B /* Preview Content */,
+			);
+			path = ReflectHealth;
+			sourceTree = "<group>";
+		};
+		5BC1668A2BD68FB40020611B /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				5BC1668B2BD68FB40020611B /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		5BC166932BD6901E0020611B /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				5BC166842BD68FB00020611B /* ReflectHealthApp.swift */,
+				5BC166AF2BD6A4700020611B /* Launch Screen.storyboard */,
+				5BC166862BD68FB00020611B /* ContentView.swift */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		5BC166942BD690AD0020611B /* CameraTrack */ = {
+			isa = PBXGroup;
+			children = (
+				5B1B61E92BD6B64A00CC6091 /* ViewModels */,
+				5B1B61E72BD6B63A00CC6091 /* Views */,
+				5B1B61E82BD6B64300CC6091 /* Models */,
+			);
+			path = CameraTrack;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		5BC166802BD68FB00020611B /* ReflectHealth */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5BC1668F2BD68FB40020611B /* Build configuration list for PBXNativeTarget "ReflectHealth" */;
+			buildPhases = (
+				5BC1667D2BD68FB00020611B /* Sources */,
+				5BC1667E2BD68FB00020611B /* Frameworks */,
+				5BC1667F2BD68FB00020611B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ReflectHealth;
+			productName = ReflectHealth;
+			productReference = 5BC166812BD68FB00020611B /* ReflectHealth.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		5BC166792BD68FB00020611B /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1530;
+				LastUpgradeCheck = 1530;
+				TargetAttributes = {
+					5BC166802BD68FB00020611B = {
+						CreatedOnToolsVersion = 15.3;
+					};
+				};
+			};
+			buildConfigurationList = 5BC1667C2BD68FB00020611B /* Build configuration list for PBXProject "ReflectHealth" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 5BC166782BD68FB00020611B;
+			productRefGroup = 5BC166822BD68FB00020611B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				5BC166802BD68FB00020611B /* ReflectHealth */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		5BC1667F2BD68FB00020611B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5BC166B02BD6A4700020611B /* Launch Screen.storyboard in Resources */,
+				5BC1668C2BD68FB40020611B /* Preview Assets.xcassets in Resources */,
+				5BC166892BD68FB40020611B /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		5BC1667D2BD68FB00020611B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5BC1669A2BD6914D0020611B /* CameraView+Buttons.swift in Sources */,
+				5BC166A02BD691F80020611B /* CameraPreview.swift in Sources */,
+				5BC166AA2BD6933D0020611B /* CanvasView.swift in Sources */,
+				5BC166A22BD692150020611B /* ControlButtonView.swift in Sources */,
+				5BC166962BD690E70020611B /* CameraView.swift in Sources */,
+				5BC1669E2BD691B90020611B /* LabelView.swift in Sources */,
+				5BC166982BD691180020611B /* CameraViewModel.swift in Sources */,
+				5BC166872BD68FB00020611B /* ContentView.swift in Sources */,
+				5BC166AE2BD6A1150020611B /* LabelView+.swift in Sources */,
+				5BC166A62BD692990020611B /* LabelViewModel.swift in Sources */,
+				5BC166852BD68FB00020611B /* ReflectHealthApp.swift in Sources */,
+				5BC166A82BD6930F0020611B /* ToolType.swift in Sources */,
+				5BC166A42BD6923D0020611B /* View+.swift in Sources */,
+				5BC166AC2BD6969B0020611B /* CanvasToolsView.swift in Sources */,
+				5BC1669C2BD691690020611B /* CameraView+ControlBar.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		5BC1668D2BD68FB40020611B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		5BC1668E2BD68FB40020611B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		5BC166902BD68FB40020611B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"ReflectHealth/Preview Content\"";
+				DEVELOPMENT_TEAM = ARR2XL2C6P;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = ReflectHealth/Info.plist;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen.storyboard";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.martinijfb.ReflectHealth;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		5BC166912BD68FB40020611B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"ReflectHealth/Preview Content\"";
+				DEVELOPMENT_TEAM = ARR2XL2C6P;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = ReflectHealth/Info.plist;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen.storyboard";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.martinijfb.ReflectHealth;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		5BC1667C2BD68FB00020611B /* Build configuration list for PBXProject "ReflectHealth" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5BC1668D2BD68FB40020611B /* Debug */,
+				5BC1668E2BD68FB40020611B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5BC1668F2BD68FB40020611B /* Build configuration list for PBXNativeTarget "ReflectHealth" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5BC166902BD68FB40020611B /* Debug */,
+				5BC166912BD68FB40020611B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 5BC166792BD68FB00020611B /* Project object */;
+}
