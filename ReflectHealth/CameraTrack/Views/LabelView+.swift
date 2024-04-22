@@ -53,4 +53,32 @@ extension LabelView {
                 .padding()
         }
     }
+    
+    @ViewBuilder
+    internal func textEditorSection() -> some View {
+        HStack {
+            TextEditor(text: self.$textEditorText)
+                    .focused($textEditorInFocus)
+                    .foregroundStyle(self.textEditorText == placeholderString ? .secondary : .primary)
+                          .onTapGesture {
+                            if self.textEditorText == placeholderString {
+                              self.textEditorText = ""
+                            }
+                          }
+                          .frame(height: 80)
+                          .colorMultiply(Color(uiColor: .systemGray6))
+                      .clipShape(RoundedRectangle(cornerRadius: 10.0))
+            
+            if textEditorInFocus {
+                Button {
+                    textEditorInFocus = false
+                } label: {
+                    Image(systemName: "checkmark.circle.fill")
+                        .font(.largeTitle)
+                }
+            }
+
+        }
+    }
+
 }

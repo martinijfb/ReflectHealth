@@ -18,38 +18,14 @@ struct LabelView: View {
     var body: some View {
         NavigationStack {
             VStack {
-                if let uiImage = UIImage(named: "pikachu") {
-//                if let imageData, let uiImage = UIImage(data: imageData) {
+//                if let uiImage = UIImage(named: "pikachu") {
+                if let imageData, let uiImage = UIImage(data: imageData) {
                     
                     if !textEditorInFocus {
                         CanvasToolsView(vm: $vm)
                     }
                     displayedImage(uiImage)
-                    
-                                        
-                    HStack {
-                        TextEditor(text: self.$textEditorText)
-                                .focused($textEditorInFocus)
-                                .foregroundStyle(self.textEditorText == placeholderString ? .secondary : .primary)
-                                      .onTapGesture {
-                                        if self.textEditorText == placeholderString {
-                                          self.textEditorText = ""
-                                        }
-                                      }
-                                      .frame(height: 80)
-                                      .colorMultiply(Color(uiColor: .systemGray6))
-                                  .clipShape(RoundedRectangle(cornerRadius: 10.0))
-                        
-                        if textEditorInFocus {
-                            Button {
-                                textEditorInFocus = false
-                            } label: {
-                                Image(systemName: "checkmark.circle.fill")
-                                    .font(.largeTitle)
-                            }
-                        }
-
-                    }
+                    textEditorSection()
                    
                 } else {
                     openCameraButton
@@ -67,6 +43,8 @@ struct LabelView: View {
         }
     }
 }
+
+
 
 #Preview {
     LabelView()
