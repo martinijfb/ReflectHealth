@@ -11,10 +11,12 @@ import PencilKit
 @Observable
 class LabelViewModel: ObservableObject {
     
-    var imageData: Data? = nil
+    
+    //    var imageData: Data? = nil
+    var imageData: Data? = UIImage(named: "pikachu")?.pngData()
     var showCamera: Bool = false
     var textEditorText: String = "Add notes here ..."
-
+    
     
     var canvasView = PKCanvasView()
     var selectedColor: Color = .accentColor
@@ -23,6 +25,11 @@ class LabelViewModel: ObservableObject {
     
     func openCamera() {
         showCamera = true
+    }
+    
+    func deleteRecordedData() {
+        imageData = nil
+        textEditorText = placeholderString
     }
     
     func undo() {
@@ -37,7 +44,17 @@ class LabelViewModel: ObservableObject {
         }
     }
     
+    func validateTextEditor() {
+        if textEditorText.isEmpty {
+            textEditorText = placeholderString
+        }
+    }
+    
     func clearCanvas() {
         canvasView.drawing = PKDrawing()
+    }
+    
+    func saveRecordedData() {
+        return
     }
 }

@@ -38,6 +38,7 @@ extension CameraView {
             usePhotoButton
                 .frame(width: controlButtonWidth)
         }
+        .padding(.horizontal)
         .padding(.top)
     }
 }

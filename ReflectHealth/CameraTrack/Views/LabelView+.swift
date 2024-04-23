@@ -27,16 +27,26 @@ extension LabelView {
             .padding(.bottom)
     }
     
-    internal var toolbarCameraButton: some View {
+    internal var deleteRecordedDataButton: some View {
         Button {
-            vm.openCamera()
+            vm.deleteRecordedData()
         } label: {
-            Image(systemName: "camera.fill")
+            Image(systemName: "trash")
+        }
+    }
+    
+    internal var saveRecordedDataButton: some View {
+        Button("Save") {
+            vm.saveRecordedData()
         }
     }
     
     internal var openCameraButton: some View {
         VStack {
+            Text("Let's track your progress ⌛️")
+                .font(.callout)
+                .padding()
+            
             Button {
                 vm.openCamera()
             } label: {
@@ -51,6 +61,7 @@ extension LabelView {
             Text("Open the Camera")
                 .font(.headline)
                 .padding()
+         
         }
     }
     
@@ -68,6 +79,11 @@ extension LabelView {
                     .foregroundStyle(vm.textEditorText == vm.placeholderString ? .secondary : .primary)
                     .onTapGesture {
                         vm.clearTextEditor()
+                    }
+                    .onChange(of: textEditorInFocus) { focused in
+                        if !focused {
+                            vm.validateTextEditor()
+                        }
                     }
                     .frame(height: 80)
                     .colorMultiply(Color(uiColor: .systemGray6))

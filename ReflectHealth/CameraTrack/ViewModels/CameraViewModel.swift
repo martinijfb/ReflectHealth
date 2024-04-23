@@ -130,7 +130,9 @@ class CameraViewModel: NSObject {
         Task(priority: .background) {
             self.session.startRunning()
             await MainActor.run {
-                self.photoCaptureState = .notStarted
+                withAnimation {
+                    self.photoCaptureState = .notStarted
+                }
             }
         }
     }

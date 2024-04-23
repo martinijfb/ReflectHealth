@@ -10,11 +10,10 @@ import SwiftUI
 struct LabelView: View {
     @State internal var vm = LabelViewModel()
     @FocusState internal var textEditorInFocus: Bool
-
+    
     var body: some View {
         NavigationStack {
             VStack {
-//                if let uiImage = UIImage(named: "pikachu") {
                 if let imageData = vm.imageData, let uiImage = UIImage(data: imageData) {
                     
                     if !textEditorInFocus {
@@ -22,7 +21,7 @@ struct LabelView: View {
                     }
                     displayedImage(uiImage)
                     textEditorSection()
-                   
+                    
                 } else {
                     openCameraButton
                 }
@@ -31,8 +30,14 @@ struct LabelView: View {
             .navigationTitle("Track")
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
-                ToolbarItem(placement: .topBarTrailing) {
-                    toolbarCameraButton
+                if vm.imageData != nil {
+                    ToolbarItem(placement: .topBarTrailing) {
+                        deleteRecordedDataButton
+                    }
+                    
+                    ToolbarItem(placement: .topBarLeading) {
+                        saveRecordedDataButton
+                    }
                 }
             }
             .fullScreenCamera(isPresented: $vm.showCamera, imageData: $vm.imageData)
