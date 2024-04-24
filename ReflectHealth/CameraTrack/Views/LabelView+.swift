@@ -80,8 +80,8 @@ extension LabelView {
                     .onTapGesture {
                         vm.clearTextEditor()
                     }
-                    .onChange(of: textEditorInFocus) { focused in
-                        if !focused {
+                    .onChange(of: textEditorInFocus) {
+                        if !textEditorInFocus {
                             vm.validateTextEditor()
                         }
                     }
