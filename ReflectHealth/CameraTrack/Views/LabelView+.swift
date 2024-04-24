@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import PencilKit
 
 extension LabelView {
     internal func displayedImageLeft(_ uiImage: UIImage) -> some View {
@@ -96,7 +97,7 @@ extension LabelView {
             Text("Open the Camera")
                 .font(.headline)
                 .padding()
-         
+            
         }
     }
     
@@ -130,6 +131,56 @@ extension LabelView {
                 
             }
         }
+    }
+    
+    @ViewBuilder
+    internal func getTabContent(selectedTab: Int) -> some View {
+        switch selectedTab {
+        case 0:
+            if let uiImage = UIImage(data: vm.imageData[0]) {
+                displayedImageLeft(uiImage)
+            }
+        case 1:
+            if let uiImage = UIImage(data: vm.imageData[1]) {
+                displayedImageRight(uiImage)
+            }
+        case 2:
+            if let uiImage = UIImage(data: vm.imageData[2]) {
+                displayedImageFront(uiImage)
+            }
+        default:
+            Text("No images were found")
+        }
+    }
+    
+    internal func currentCanvasView(selectedTab: Int) -> PKCanvasView {
+        switch selectedTab {
+        case 0:
+            return vm.canvasViewLeft
+        case 1:
+            return vm.canvasViewRight
+        case 2:
+            return vm.canvasViewFront
+        default:
+            return PKCanvasView() // fallback if needed
+        }
+    }
+    
+    func imageToLabelPicker(selectedTab: Binding<Int>) -> some View {
+        HStack {
+            Spacer()
+            Text("Select an image to label:")
+                .fontWeight(.semibold)
+            Spacer()
+            Picker("Select Image to Label", selection: selectedTab) {
+                Text("Left").tag(0)
+                Text("Right").tag(1)
+                Text("Front").tag(2)
+            }
+            .pickerStyle(.menu)
+            Spacer()
+        }
+        .padding(.vertical)
     }
 }
 

@@ -15,13 +15,13 @@ class LabelViewModel: ObservableObject {
 //    var imageData: [Data] = []
     var imageData: [Data] = [
         UIImage(named: "pikachu")!.pngData()!,
-        UIImage(named: "pikachu")!.pngData()!,
-        UIImage(named: "pikachu")!.pngData()!,
+        UIImage(named: "charizard")!.pngData()!,
+        UIImage(named: "rayquaza")!.pngData()!,
     ]
 //    var imageData: Data? = UIImage(named: "pikachu")?.pngData()
     var showCamera: Bool = false
     var textEditorText: String = "Add notes here ..."
-    
+    var selectedTab: Int = 0
     
     var canvasViewLeft = PKCanvasView()
     var canvasViewRight = PKCanvasView()

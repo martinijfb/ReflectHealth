@@ -6,21 +6,20 @@
 //
 
 import SwiftUI
-import PencilKit
 
 struct LabelView: View {
     @State internal var vm = LabelViewModel()
     @FocusState internal var textEditorInFocus: Bool
-    @State var selectedTab: Int = 0
     
     var body: some View {
         NavigationStack {
             VStack {
-                
+                // Show all this if there is image data
                 if vm.imageData.count >= 3 {
- 
+                    
+                    // Show Labelling Toolbar when not using keyboard
                     if !textEditorInFocus {
-                        let currentCanvas = currentCanvasView(selectedTab: selectedTab)
+                        let currentCanvas = currentCanvasView(selectedTab: vm.selectedTab)
                         CanvasToolsView(
                             toolType: $vm.toolType,
                             selectedColor: $vm.selectedColor,
@@ -29,43 +28,17 @@ struct LabelView: View {
                         )
                     }
                     
+                    // Display an image and canvas depending on picker value
+                    getTabContent(selectedTab: vm.selectedTab)
                     
-                    switch selectedTab {
-                    case 0:
-                        if let uiImage = UIImage(data: vm.imageData[0]) {
-                            displayedImageLeft(uiImage)
-                        }
-                    case 1:
-                        if let uiImage = UIImage(data: vm.imageData[1]) {
-                            displayedImageRight(uiImage)
-                        }
-                    case 2:
-                        if let uiImage = UIImage(data: vm.imageData[2]) {
-                            displayedImageFront(uiImage)
-                        }
-                    default:
-                        Text("Not images were found")
-                    }
+                    // Display Picker
+                    imageToLabelPicker(selectedTab: $vm.selectedTab)
                     
-                    
-                    HStack {
-                        Spacer()
-                        Text("Select an image to label:")
-                            .fontWeight(.semibold)
-                        Spacer()
-                        Picker("Select Image to Label", selection: $selectedTab) {
-                            Text("Left").tag(0)
-                            Text("Right").tag(1)
-                            Text("Front").tag(2)
-                        }
-                        .pickerStyle(.menu)
-                        Spacer()
-                    }
-                    .padding(.vertical)
-                    
+                    // Display the Texfield
                     textEditorSection()
                     
                 } else {
+                    // Display the camera button if there is no image data
                     openCameraButton
                 }
             }
@@ -73,6 +46,7 @@ struct LabelView: View {
             .navigationTitle("Track")
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
+                // Allow these options just when there is image data
                 if !vm.imageData.isEmpty {
                     ToolbarItem(placement: .topBarTrailing) {
                         deleteRecordedDataButton
@@ -86,19 +60,6 @@ struct LabelView: View {
             .fullScreenCamera(isPresented: $vm.showCamera, imageData: $vm.imageData)
         }
     }
-    
-    private func currentCanvasView(selectedTab: Int) -> PKCanvasView {
-            switch selectedTab {
-            case 0:
-                return vm.canvasViewLeft
-            case 1:
-                return vm.canvasViewRight
-            case 2:
-                return vm.canvasViewFront
-            default:
-                return PKCanvasView() // fallback if needed
-            }
-        }
 }
 
 
