@@ -37,6 +37,9 @@ class LabelViewModel: ObservableObject {
     func deleteRecordedData() {
         imageData.removeAll()
         textEditorText = placeholderString
+        clearCanvas(on: canvasViewLeft)
+        clearCanvas(on: canvasViewRight)
+        clearCanvas(on: canvasViewFront)
     }
     
     func undo(on canvas: PKCanvasView) {
