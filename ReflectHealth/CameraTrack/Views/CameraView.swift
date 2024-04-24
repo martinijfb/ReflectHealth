@@ -12,7 +12,7 @@ struct CameraView: View {
     
     @State internal var vm = CameraViewModel()
     
-    @Binding var imageData: Data?
+    @Binding var imageData: [Data]
     @Binding var showCamera: Bool
     
     let controlButtonWidth: CGFloat = 120
@@ -48,6 +48,6 @@ struct CameraView: View {
     
 }
 
-#Preview {
-    CameraView(imageData: .constant(nil), showCamera: .constant(true))
-}
+//#Preview {
+//    CameraView(imageData: .constant(nil), showCamera: .constant(true))
+//}

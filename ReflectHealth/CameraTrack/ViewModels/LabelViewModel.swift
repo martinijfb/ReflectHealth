@@ -12,13 +12,20 @@ import PencilKit
 class LabelViewModel: ObservableObject {
     
     
-    //    var imageData: Data? = nil
-    var imageData: Data? = UIImage(named: "pikachu")?.pngData()
+//    var imageData: [Data] = []
+    var imageData: [Data] = [
+        UIImage(named: "pikachu")!.pngData()!,
+        UIImage(named: "pikachu")!.pngData()!,
+        UIImage(named: "pikachu")!.pngData()!,
+    ]
+//    var imageData: Data? = UIImage(named: "pikachu")?.pngData()
     var showCamera: Bool = false
     var textEditorText: String = "Add notes here ..."
     
     
-    var canvasView = PKCanvasView()
+    var canvasViewLeft = PKCanvasView()
+    var canvasViewRight = PKCanvasView()
+    var canvasViewFront = PKCanvasView()
     var selectedColor: Color = .accentColor
     var toolType: ToolType = .pen
     var placeholderString: String = "Add notes here ..."
@@ -28,15 +35,15 @@ class LabelViewModel: ObservableObject {
     }
     
     func deleteRecordedData() {
-        imageData = nil
+        imageData.removeAll()
         textEditorText = placeholderString
     }
     
-    func undo() {
-        if canvasView.undoManager?.canUndo == true {
-            canvasView.undoManager?.undo()
+    func undo(on canvas: PKCanvasView) {
+            if canvas.undoManager?.canUndo == true {
+                canvas.undoManager?.undo()
+            }
         }
-    }
     
     func clearTextEditor() {
         if textEditorText == placeholderString {
@@ -50,7 +57,7 @@ class LabelViewModel: ObservableObject {
         }
     }
     
-    func clearCanvas() {
+    func clearCanvas(on canvasView: PKCanvasView) {
         canvasView.drawing = PKDrawing()
     }
     

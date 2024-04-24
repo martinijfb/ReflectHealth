@@ -10,8 +10,14 @@ import SwiftUI
 extension CameraView {
     internal var usePhotoButton: some View {
         ControlButtonView(label: "Use Photo") {
-            imageData = vm.photoData
-            showCamera = false
+            if let data = vm.photoData {
+                imageData.append(data)
+            }
+            if imageData.count >= 3 {
+                showCamera = false
+            } else {
+                vm.retakePhoto()
+            }
         }
     }
     

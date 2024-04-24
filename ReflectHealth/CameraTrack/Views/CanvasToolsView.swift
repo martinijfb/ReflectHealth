@@ -6,40 +6,45 @@
 //
 
 import SwiftUI
+import PencilKit
 
 struct CanvasToolsView: View {
     
-    @Binding var vm: LabelViewModel
+    @Binding var toolType: ToolType
+    @Binding var selectedColor: Color
+    var undo: () -> Void
+    var clearCanvas: () -> Void
     
     var body: some View {
+        
         HStack(spacing: 40) {
-            Button(action: vm.undo) {
+            Button(action: undo) {
                 Image(systemName: "arrow.uturn.left")
                     .font(.title)
                     .foregroundColor(.green)
             }
             
             Button {
-                vm.toolType = .pen
+                toolType = .pen
             } label: {
                 Image(systemName: "pencil.and.outline")
                     .font(.title)
-                    .foregroundStyle(vm.toolType == .pen ? vm.selectedColor : .gray.opacity(0.5))
+                    .foregroundStyle(toolType == .pen ? selectedColor : .gray.opacity(0.5))
             }
             
             Button {
-                vm.toolType = .eraser
+                toolType = .eraser
             } label: {
                 Image(systemName: "eraser.line.dashed")
                     .font(.title)
-                    .foregroundStyle(vm.toolType == .eraser ? .indigo : .gray.opacity(0.5))
+                    .foregroundStyle(toolType == .eraser ? .indigo : .gray.opacity(0.5))
             }
             
-            ColorPicker("Color", selection: $vm.selectedColor, supportsOpacity: false)
+            ColorPicker("Color", selection: $selectedColor, supportsOpacity: false)
                 .labelsHidden()
-                .disabled(vm.toolType == .eraser)
+                .disabled(toolType == .eraser)
             
-            Button(action: vm.clearCanvas) {
+            Button(action: clearCanvas) {
                 Image(systemName: "xmark")
                     .font(.title)
                     .foregroundStyle(.red)
@@ -49,6 +54,6 @@ struct CanvasToolsView: View {
     }
 }
 
-#Preview {
-    CanvasToolsView(vm: .constant(LabelViewModel())) // Use a constant binding
-}
+//#Preview {
+//    CanvasToolsView(currentCanvas: <#T##PKCanvasView#>, selectedColor: <#T##Color#>, toolType: <#T##Binding<ToolType>#>, undo: <#T##() -> Void#>, clearCanvas: <#T##() -> Void#>) // Use a constant binding
+//}

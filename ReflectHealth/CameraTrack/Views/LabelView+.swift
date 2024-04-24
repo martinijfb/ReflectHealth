@@ -8,7 +8,7 @@
 import SwiftUI
 
 extension LabelView {
-    internal func displayedImage(_ uiImage: UIImage) -> some View {
+    internal func displayedImageLeft(_ uiImage: UIImage) -> some View {
         Image(uiImage: uiImage)
             .resizable()
             .scaledToFit()
@@ -16,7 +16,7 @@ extension LabelView {
                 textEditorInFocus ? nil :
                     GeometryReader { imageGeometry in
                         CanvasView(
-                            canvasView: $vm.canvasView,
+                            canvasView: $vm.canvasViewLeft,
                             rect: imageGeometry.frame(in: .local),
                             toolType: vm.toolType,
                             color: UIColor(vm.selectedColor)
@@ -24,7 +24,42 @@ extension LabelView {
                     }
             )
             .clipShape(RoundedRectangle(cornerRadius: 10))
-            .padding(.bottom)
+    }
+    
+    internal func displayedImageRight(_ uiImage: UIImage) -> some View {
+        Image(uiImage: uiImage)
+            .resizable()
+            .scaledToFit()
+            .overlay(
+                textEditorInFocus ? nil :
+                    GeometryReader { imageGeometry in
+                        CanvasView(
+                            canvasView: $vm.canvasViewRight,
+                            rect: imageGeometry.frame(in: .local),
+                            toolType: vm.toolType,
+                            color: UIColor(vm.selectedColor)
+                        )
+                    }
+            )
+            .clipShape(RoundedRectangle(cornerRadius: 10))
+    }
+    
+    internal func displayedImageFront(_ uiImage: UIImage) -> some View {
+        Image(uiImage: uiImage)
+            .resizable()
+            .scaledToFit()
+            .overlay(
+                textEditorInFocus ? nil :
+                    GeometryReader { imageGeometry in
+                        CanvasView(
+                            canvasView: $vm.canvasViewFront,
+                            rect: imageGeometry.frame(in: .local),
+                            toolType: vm.toolType,
+                            color: UIColor(vm.selectedColor)
+                        )
+                    }
+            )
+            .clipShape(RoundedRectangle(cornerRadius: 10))
     }
     
     internal var deleteRecordedDataButton: some View {
@@ -68,11 +103,6 @@ extension LabelView {
     @ViewBuilder
     internal func textEditorSection() -> some View {
         VStack {
-            HStack {
-                Text("Notes")
-                    .fontWeight(.semibold)
-                Spacer()
-            }
             HStack {
                 TextEditor(text: $vm.textEditorText)
                     .focused($textEditorInFocus)
