@@ -7,10 +7,10 @@
 
 import SwiftUI
 import PencilKit
+import SwiftData
 
 @Observable
 class LabelViewModel: ObservableObject {
-    
     
 //    var imageData: [Data] = []
     var imageData: [Data] = [
@@ -20,6 +20,7 @@ class LabelViewModel: ObservableObject {
     ]
 //    var imageData: Data? = UIImage(named: "pikachu")?.pngData()
     var showCamera: Bool = false
+    var showSavedSheet: Bool = false
     var textEditorText: String = "Add notes here ..."
     var selectedTab: Int = 0
     
@@ -29,6 +30,8 @@ class LabelViewModel: ObservableObject {
     var selectedColor: Color = .accentColor
     var toolType: ToolType = .pen
     var placeholderString: String = "Add notes here ..."
+    
+
     
     func openCamera() {
         showCamera = true
@@ -64,7 +67,20 @@ class LabelViewModel: ObservableObject {
         canvasView.drawing = PKDrawing()
     }
     
-    func saveRecordedData() {
-        return
+    func pkDrawingToUIImage(drawing: PKDrawing, size: CGSize, scale: CGFloat = 1.0) -> UIImage {
+        return drawing.image(from: CGRect(origin: .zero, size: size), scale: scale)
     }
+
+    // After getting the correct size, convert the PKDrawing to image data
+    func convertDrawingToImageData(canvasView: PKCanvasView) -> Data? {
+        // Get the current size of the canvas view
+        let canvasSize = canvasView.frame.size
+        
+        // Convert the PKDrawing to UIImage with the same size as the overlayed image
+        let drawingImage = pkDrawingToUIImage(drawing: canvasView.drawing, size: canvasSize)
+
+        // Convert UIImage to PNG data
+        return drawingImage.pngData()
+    }
+    
 }

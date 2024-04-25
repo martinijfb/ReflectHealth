@@ -34,7 +34,7 @@ struct ContentView: View {
                 }
                 .tag(2)
             
-            ContentUnavailableView("This content is not available", systemImage: "waterbottle.fill", description: Text("Sorry, at the moment the data could not be loaded"))
+            ProgressView()
                 .tabItem {
                     Image(systemName: "calendar.badge.plus")
                     Text("Progress")
@@ -54,5 +54,11 @@ struct ContentView: View {
 
 
 #Preview {
-    ContentView()
+    do {
+        let previewer = try Previewer()
+        return ContentView()
+            .modelContainer(previewer.container)
+    } catch {
+        return Text("Failed to create preview: \(error.localizedDescription)")
+    }
 }

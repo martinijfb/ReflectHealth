@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct LabelView: View {
+    @Environment(\.modelContext) var modelContext
     @State internal var vm = LabelViewModel()
     @FocusState internal var textEditorInFocus: Bool
     
@@ -58,6 +59,9 @@ struct LabelView: View {
                 }
             }
             .fullScreenCamera(isPresented: $vm.showCamera, imageData: $vm.imageData)
+            .sheet(isPresented: $vm.showSavedSheet, content: {
+                savedTrackDataSheet
+            })
         }
     }
 }

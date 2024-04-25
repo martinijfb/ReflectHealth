@@ -73,7 +73,7 @@ extension LabelView {
     
     internal var saveRecordedDataButton: some View {
         Button("Save") {
-            vm.saveRecordedData()
+            saveRecordedData()
         }
     }
     
@@ -182,6 +182,33 @@ extension LabelView {
         }
         .padding(.vertical)
     }
+    
+    var savedTrackDataSheet: some View {
+        ZStack {
+            Color.accentColor.ignoresSafeArea()
+            VStack {
+                HStack {
+                    Button {
+                        vm.showSavedSheet = false
+                    } label: {
+                        Image(systemName: "xmark")
+                            .font(.largeTitle)
+                            .foregroundStyle(.white)
+                }
+                 Spacer()
+                }
+                Spacer()
+                Text("Your Progress was saved 😁")
+                    .font(.largeTitle)
+                    .fontWeight(.bold)
+                    .foregroundStyle(.white)
+                .multilineTextAlignment(.center)
+                Spacer()
+            }
+            .padding()
+        }
+    }
+    
 }
 
 #Preview {

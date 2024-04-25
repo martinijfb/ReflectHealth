@@ -27,7 +27,7 @@ struct CanvasToolsView: View {
             Button {
                 toolType = .pen
             } label: {
-                Image(systemName: "pencil.and.outline")
+                Image(systemName: "pencil.tip.crop.circle")
                     .font(.title)
                     .foregroundStyle(toolType == .pen ? selectedColor : .gray.opacity(0.5))
             }
@@ -54,6 +54,16 @@ struct CanvasToolsView: View {
     }
 }
 
-//#Preview {
-//    CanvasToolsView(currentCanvas: <#T##PKCanvasView#>, selectedColor: <#T##Color#>, toolType: <#T##Binding<ToolType>#>, undo: <#T##() -> Void#>, clearCanvas: <#T##() -> Void#>) // Use a constant binding
-//}
+struct CanvasToolsView_Previews: PreviewProvider {
+    @State static var toolType: ToolType = .pen
+    @State static var selectedColor: Color = .blue
+
+    static var previews: some View {
+        CanvasToolsView(
+            toolType: $toolType,
+            selectedColor: $selectedColor,
+            undo: { print("Undo") },
+            clearCanvas: { print("Clear Canvas") }
+        )
+    }
+}

@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5BB061BD2BD9389B00C7601B /* TrackedData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BB061BC2BD9389B00C7601B /* TrackedData.swift */; };
+		5BB061C42BD9412B00C7601B /* ProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BB061C32BD9412B00C7601B /* ProgressView.swift */; };
+		5BB061C62BD950C000C7601B /* LabelView+SwiftData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BB061C52BD950C000C7601B /* LabelView+SwiftData.swift */; };
+		5BB061CA2BD9699000C7601B /* EditTrackedDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BB061C92BD9699000C7601B /* EditTrackedDataView.swift */; };
+		5BB061CC2BD96A5F00C7601B /* Previewer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BB061CB2BD96A5F00C7601B /* Previewer.swift */; };
+		5BB061CE2BD9CE6600C7601B /* DrawingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BB061CD2BD9CE6600C7601B /* DrawingView.swift */; };
 		5BC166852BD68FB00020611B /* ReflectHealthApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC166842BD68FB00020611B /* ReflectHealthApp.swift */; };
 		5BC166872BD68FB00020611B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC166862BD68FB00020611B /* ContentView.swift */; };
 		5BC166892BD68FB40020611B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5BC166882BD68FB40020611B /* Assets.xcassets */; };
@@ -28,6 +34,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5BB061BC2BD9389B00C7601B /* TrackedData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackedData.swift; sourceTree = "<group>"; };
+		5BB061C32BD9412B00C7601B /* ProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressView.swift; sourceTree = "<group>"; };
+		5BB061C52BD950C000C7601B /* LabelView+SwiftData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LabelView+SwiftData.swift"; sourceTree = "<group>"; };
+		5BB061C92BD9699000C7601B /* EditTrackedDataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTrackedDataView.swift; sourceTree = "<group>"; };
+		5BB061CB2BD96A5F00C7601B /* Previewer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Previewer.swift; sourceTree = "<group>"; };
+		5BB061CD2BD9CE6600C7601B /* DrawingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawingView.swift; sourceTree = "<group>"; };
 		5BC166812BD68FB00020611B /* ReflectHealth.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ReflectHealth.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5BC166842BD68FB00020611B /* ReflectHealthApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReflectHealthApp.swift; sourceTree = "<group>"; };
 		5BC166862BD68FB00020611B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -66,6 +78,7 @@
 			children = (
 				5BC1669D2BD691B90020611B /* LabelView.swift */,
 				5BC166AD2BD6A1150020611B /* LabelView+.swift */,
+				5BB061C52BD950C000C7601B /* LabelView+SwiftData.swift */,
 				5BC166952BD690E70020611B /* CameraView.swift */,
 				5BC166992BD6914D0020611B /* CameraView+Buttons.swift */,
 				5BC1669B2BD691690020611B /* CameraView+ControlBar.swift */,
@@ -95,6 +108,24 @@
 			path = ViewModels;
 			sourceTree = "<group>";
 		};
+		5BB061B72BD9359800C7601B /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				5BB061BC2BD9389B00C7601B /* TrackedData.swift */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		5BB061C22BD9410400C7601B /* Progress */ = {
+			isa = PBXGroup;
+			children = (
+				5BB061C32BD9412B00C7601B /* ProgressView.swift */,
+				5BB061C92BD9699000C7601B /* EditTrackedDataView.swift */,
+				5BB061CD2BD9CE6600C7601B /* DrawingView.swift */,
+			);
+			path = Progress;
+			sourceTree = "<group>";
+		};
 		5BC166782BD68FB00020611B = {
 			isa = PBXGroup;
 			children = (
@@ -117,8 +148,11 @@
 				5BC166B12BD6A7860020611B /* Info.plist */,
 				5BC166932BD6901E0020611B /* Core */,
 				5BC166942BD690AD0020611B /* CameraTrack */,
+				5BB061C22BD9410400C7601B /* Progress */,
+				5BB061B72BD9359800C7601B /* Entities */,
 				5BC166882BD68FB40020611B /* Assets.xcassets */,
 				5BC1668A2BD68FB40020611B /* Preview Content */,
+				5BB061CB2BD96A5F00C7601B /* Previewer.swift */,
 			);
 			path = ReflectHealth;
 			sourceTree = "<group>";
@@ -225,18 +259,24 @@
 				5BC1669A2BD6914D0020611B /* CameraView+Buttons.swift in Sources */,
 				5BC166A02BD691F80020611B /* CameraPreview.swift in Sources */,
 				5BC166AA2BD6933D0020611B /* CanvasView.swift in Sources */,
+				5BB061BD2BD9389B00C7601B /* TrackedData.swift in Sources */,
 				5BC166A22BD692150020611B /* ControlButtonView.swift in Sources */,
 				5BC166962BD690E70020611B /* CameraView.swift in Sources */,
+				5BB061C42BD9412B00C7601B /* ProgressView.swift in Sources */,
+				5BB061C62BD950C000C7601B /* LabelView+SwiftData.swift in Sources */,
 				5BC1669E2BD691B90020611B /* LabelView.swift in Sources */,
 				5BC166982BD691180020611B /* CameraViewModel.swift in Sources */,
+				5BB061CA2BD9699000C7601B /* EditTrackedDataView.swift in Sources */,
 				5BC166872BD68FB00020611B /* ContentView.swift in Sources */,
 				5BC166AE2BD6A1150020611B /* LabelView+.swift in Sources */,
 				5BC166A62BD692990020611B /* LabelViewModel.swift in Sources */,
+				5BB061CE2BD9CE6600C7601B /* DrawingView.swift in Sources */,
 				5BC166852BD68FB00020611B /* ReflectHealthApp.swift in Sources */,
 				5BC166A82BD6930F0020611B /* ToolType.swift in Sources */,
 				5BC166A42BD6923D0020611B /* View+.swift in Sources */,
 				5BC166AC2BD6969B0020611B /* CanvasToolsView.swift in Sources */,
 				5BC1669C2BD691690020611B /* CameraView+ControlBar.swift in Sources */,
+				5BB061CC2BD96A5F00C7601B /* Previewer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

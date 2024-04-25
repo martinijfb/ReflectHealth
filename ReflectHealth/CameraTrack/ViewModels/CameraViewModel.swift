@@ -110,7 +110,9 @@ class CameraViewModel: NSObject {
         }
         
         session.commitConfiguration()
-        session.startRunning()
+        Task(priority: .background) {
+            session.startRunning()
+        }
     }
     
     
