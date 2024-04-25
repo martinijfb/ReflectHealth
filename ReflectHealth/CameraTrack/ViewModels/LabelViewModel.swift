@@ -12,13 +12,13 @@ import SwiftData
 @Observable
 class LabelViewModel: ObservableObject {
     
-//    var imageData: [Data] = []
-    var imageData: [Data] = [
-        UIImage(named: "pikachu")!.pngData()!,
-        UIImage(named: "charizard")!.pngData()!,
-        UIImage(named: "rayquaza")!.pngData()!,
-    ]
-//    var imageData: Data? = UIImage(named: "pikachu")?.pngData()
+    var imageData: [Data] = []
+//    var imageData: [Data] = [
+//        UIImage(named: "pikachu")!.pngData()!,
+//        UIImage(named: "charizard")!.pngData()!,
+//        UIImage(named: "rayquaza")!.pngData()!,
+//    ]
+
     var showCamera: Bool = false
     var showSavedSheet: Bool = false
     var textEditorText: String = "Add notes here ..."
@@ -27,7 +27,7 @@ class LabelViewModel: ObservableObject {
     var canvasViewLeft = PKCanvasView()
     var canvasViewRight = PKCanvasView()
     var canvasViewFront = PKCanvasView()
-    var selectedColor: Color = .accentColor
+    var selectedColor: Color = .blue
     var toolType: ToolType = .pen
     var placeholderString: String = "Add notes here ..."
     

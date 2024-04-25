@@ -11,55 +11,67 @@ import PencilKit
 
 struct ProgressView: View {
     @Environment(\.modelContext) var modelContext
-    @Query var trackedDataPieces: [TrackedData]
+    
+    @State private var isDateRangePickerVisible = false
+    
+    @State private var sortOrder = SortDescriptor(\TrackedData.date, order: .reverse)
+    @State private var startDate: Date = Calendar.current.startOfDay(for: Date()).addingTimeInterval(-86400 * 30) // 30 days ago
+        @State private var endDate: Date = {
+            let today = Calendar.current.startOfDay(for: Date())
+            return Calendar.current.date(byAdding: .second, value: 86399, to: today)!
+        }()  // End of today
     
     var body: some View {
         NavigationStack {
-            List {
-                ForEach(trackedDataPieces) { trackedDataPiece in
-                    NavigationLink(value: trackedDataPiece) {
-                        HStack {
-                            if let image = UIImage(data: trackedDataPiece.image3) {
-                                Image(uiImage: image)
-                                    .resizable()
-                                    .scaledToFit()
-                                    .frame(width: 70, height: 70)
+            ProgressListingView(sort: sortOrder, startDate: startDate, endDate: endDate)
+                .scrollContentBackground(.hidden)
+                .navigationTitle("Your Progress")
+                .navigationDestination(for: TrackedData.self) { trackedDataPiece in
+                    EditTrackedDataView(trackDataPiece: trackedDataPiece)
+                        .navigationBarBackButtonHidden()
+                }
+                .toolbar {
+                    ToolbarItem(placement: .topBarLeading) {
+                        Button("Add Samples", action: addSamples)
+                    }
+                    
+                    ToolbarItem(placement: .topBarTrailing) {
+                        Menu("Sort", systemImage: "arrow.up.arrow.down") {
+                            Picker("Sort", selection: $sortOrder) {
+                                Text("Ascending")
+                                    .tag(SortDescriptor(\TrackedData.date, order: .forward))
+                                Text("Descending")
+                                    .tag(SortDescriptor(\TrackedData.date, order: .reverse))
                             }
-                            VStack(alignment: .leading) {
-                                Text("Progress from:")
-                                    .fontWeight(.semibold)
-                                Text(trackedDataPiece.date.formatted(date: .long, time: .shortened))
-                            }
-                            Spacer()
+                            .pickerStyle(.inline)
+                        }
+                    }
+                    
+                    ToolbarItem(placement: .topBarTrailing) {
+                        Button {
+                            isDateRangePickerVisible = true
+                        } label: {
+                            Image(systemName: "calendar")
                         }
                     }
                 }
-                .onDelete(perform: deleteTrackDataPiece)
-            }
-            .navigationTitle("Your Progress")
-            .navigationDestination(for: TrackedData.self) { trackedDataPiece in
-                EditTrackedDataView(trackDataPiece: trackedDataPiece)
-            }
-            .toolbar {
-                ToolbarItem(placement: .topBarTrailing) {
-                    Button("Add Samples", action: addSamples)
-                }
-            }
+                .sheet(isPresented: $isDateRangePickerVisible, content: {
+                    DateRangePickerSheet(startDate: $startDate, endDate: $endDate, isPresented: $isDateRangePickerVisible)
+                        .presentationDetents([.height(210)])
+                        .presentationDragIndicator(.visible)
+                })
+                .scrollContentBackground(.hidden)
+                .background(Gradients.customGradient)
         }
     }
     
-    func deleteTrackDataPiece(_ indexSet: IndexSet) {
-        for index in indexSet {
-            let trackDataPiece = trackedDataPieces[index]
-            modelContext.delete(trackDataPiece)
-        }
-    }
+    
     
     func addSamples() {
         let image1 = UIImage(named: "pikachu")!.pngData()!
         let image2 = UIImage(named: "charizard")!.pngData()!
         let image3 = UIImage(named: "rayquaza")!.pngData()!
-
+        
         let notes = "These are sample notes, do not do anything with this dlaubculcxfncfluinh udfhcn xuiewfnxciuhe fiuhfx luie eyfg ihfux."
         
         let sample1 = TrackedData(image1: image1, image2: image2, image3: image3, notes: notes)

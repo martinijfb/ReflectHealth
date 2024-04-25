@@ -13,6 +13,9 @@
 		5BB061CA2BD9699000C7601B /* EditTrackedDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BB061C92BD9699000C7601B /* EditTrackedDataView.swift */; };
 		5BB061CC2BD96A5F00C7601B /* Previewer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BB061CB2BD96A5F00C7601B /* Previewer.swift */; };
 		5BB061CE2BD9CE6600C7601B /* DrawingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BB061CD2BD9CE6600C7601B /* DrawingView.swift */; };
+		5BB061D02BD9FC0D00C7601B /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BB061CF2BD9FC0D00C7601B /* Constants.swift */; };
+		5BB061D22BDA7B4600C7601B /* DateRangePickerSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BB061D12BDA7B4600C7601B /* DateRangePickerSheet.swift */; };
+		5BB061D42BDA7E5500C7601B /* ProgressListingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BB061D32BDA7E5500C7601B /* ProgressListingView.swift */; };
 		5BC166852BD68FB00020611B /* ReflectHealthApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC166842BD68FB00020611B /* ReflectHealthApp.swift */; };
 		5BC166872BD68FB00020611B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC166862BD68FB00020611B /* ContentView.swift */; };
 		5BC166892BD68FB40020611B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5BC166882BD68FB40020611B /* Assets.xcassets */; };
@@ -40,6 +43,9 @@
 		5BB061C92BD9699000C7601B /* EditTrackedDataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTrackedDataView.swift; sourceTree = "<group>"; };
 		5BB061CB2BD96A5F00C7601B /* Previewer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Previewer.swift; sourceTree = "<group>"; };
 		5BB061CD2BD9CE6600C7601B /* DrawingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawingView.swift; sourceTree = "<group>"; };
+		5BB061CF2BD9FC0D00C7601B /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		5BB061D12BDA7B4600C7601B /* DateRangePickerSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateRangePickerSheet.swift; sourceTree = "<group>"; };
+		5BB061D32BDA7E5500C7601B /* ProgressListingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressListingView.swift; sourceTree = "<group>"; };
 		5BC166812BD68FB00020611B /* ReflectHealth.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ReflectHealth.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5BC166842BD68FB00020611B /* ReflectHealthApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReflectHealthApp.swift; sourceTree = "<group>"; };
 		5BC166862BD68FB00020611B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -120,8 +126,10 @@
 			isa = PBXGroup;
 			children = (
 				5BB061C32BD9412B00C7601B /* ProgressView.swift */,
+				5BB061D32BDA7E5500C7601B /* ProgressListingView.swift */,
 				5BB061C92BD9699000C7601B /* EditTrackedDataView.swift */,
 				5BB061CD2BD9CE6600C7601B /* DrawingView.swift */,
+				5BB061D12BDA7B4600C7601B /* DateRangePickerSheet.swift */,
 			);
 			path = Progress;
 			sourceTree = "<group>";
@@ -153,6 +161,7 @@
 				5BC166882BD68FB40020611B /* Assets.xcassets */,
 				5BC1668A2BD68FB40020611B /* Preview Content */,
 				5BB061CB2BD96A5F00C7601B /* Previewer.swift */,
+				5BB061CF2BD9FC0D00C7601B /* Constants.swift */,
 			);
 			path = ReflectHealth;
 			sourceTree = "<group>";
@@ -257,8 +266,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				5BC1669A2BD6914D0020611B /* CameraView+Buttons.swift in Sources */,
+				5BB061D02BD9FC0D00C7601B /* Constants.swift in Sources */,
 				5BC166A02BD691F80020611B /* CameraPreview.swift in Sources */,
 				5BC166AA2BD6933D0020611B /* CanvasView.swift in Sources */,
+				5BB061D42BDA7E5500C7601B /* ProgressListingView.swift in Sources */,
 				5BB061BD2BD9389B00C7601B /* TrackedData.swift in Sources */,
 				5BC166A22BD692150020611B /* ControlButtonView.swift in Sources */,
 				5BC166962BD690E70020611B /* CameraView.swift in Sources */,
@@ -269,6 +280,7 @@
 				5BB061CA2BD9699000C7601B /* EditTrackedDataView.swift in Sources */,
 				5BC166872BD68FB00020611B /* ContentView.swift in Sources */,
 				5BC166AE2BD6A1150020611B /* LabelView+.swift in Sources */,
+				5BB061D22BDA7B4600C7601B /* DateRangePickerSheet.swift in Sources */,
 				5BC166A62BD692990020611B /* LabelViewModel.swift in Sources */,
 				5BB061CE2BD9CE6600C7601B /* DrawingView.swift in Sources */,
 				5BC166852BD68FB00020611B /* ReflectHealthApp.swift in Sources */,

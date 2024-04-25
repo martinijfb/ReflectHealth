@@ -15,6 +15,7 @@ class Previewer {
     // MARK: - PROGRESS SECTION
     let container: ModelContainer
     let trackDataPiece: TrackedData
+    let trackDataPiece2: TrackedData
     let image1 = UIImage(named: "pikachu")!.pngData()!
     let image2 = UIImage(named: "charizard")!.pngData()!
     let image3 = UIImage(named: "rayquaza")!.pngData()!
@@ -27,8 +28,9 @@ class Previewer {
         container = try ModelContainer(for: TrackedData.self, configurations: config)
         
         trackDataPiece = TrackedData(image1: image1, image2: image2, image3: image3, notes: notes)
-        
+        trackDataPiece2 = TrackedData(date: .now.addingTimeInterval(-86400 * 7), image1: image1, image2: image2, image3: image3, notes: notes)
         container.mainContext.insert(trackDataPiece)
+        container.mainContext.insert(trackDataPiece2)
     }
     
     

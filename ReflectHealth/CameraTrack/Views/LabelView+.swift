@@ -91,6 +91,7 @@ extension LabelView {
                     .scaledToFit()
                     .padding()
                     .frame(width: 100, height: 100)
+                    .background(Gradients.customGradientInverse)
                     .background(.ultraThinMaterial)
                     .clipShape(RoundedRectangle(cornerRadius: 10.0))
             }
@@ -185,7 +186,9 @@ extension LabelView {
     
     var savedTrackDataSheet: some View {
         ZStack {
-            Color.accentColor.ignoresSafeArea()
+//            Color.accentColor.ignoresSafeArea()
+            Gradients.customGradientSheet.ignoresSafeArea()
+                .overlay(.ultraThinMaterial)
             VStack {
                 HStack {
                     Button {
