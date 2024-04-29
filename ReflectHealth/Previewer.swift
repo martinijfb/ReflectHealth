@@ -32,6 +32,4 @@ class Previewer {
         container.mainContext.insert(trackDataPiece)
         container.mainContext.insert(trackDataPiece2)
     }
-    
-    
 }

@@ -15,7 +15,7 @@ struct ContentView: View {
         TabView(selection: $selectedTab){
             
             Group {
-                ContentUnavailableView("This content is not available", systemImage: "waterbottle.fill", description: Text("Sorry, at the moment the data could not be loaded"))
+                HomeView(selectedTab: $selectedTab)
                     .tabItem {
                         Image(systemName: "house.fill")
                         Text("Home")
@@ -36,20 +36,14 @@ struct ContentView: View {
                     }
                     .tag(2)
                 
-                ProgressView()
+                ProgressView(selectedTab: $selectedTab)
                     .tabItem {
                         Image(systemName: "calendar.badge.plus")
                         Text("Progress")
                     }
                     .tag(3)
                 
-                
-                ContentUnavailableView("This content is not available", systemImage: "waterbottle.fill", description: Text("Sorry, at the moment the data could not be loaded"))
-                    .tabItem {
-                        Image(systemName: "person.fill")
-                        Text("Profile")
-                    }
-                    .tag(4)
+    
             }
             .background(Gradients.customGradient)
         }

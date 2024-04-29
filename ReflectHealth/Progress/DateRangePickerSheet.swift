@@ -71,7 +71,7 @@ struct DateRangePickerSheet: View {
 #Preview {
     do {
         let previewer = try Previewer()
-        return ProgressView()
+        return ProgressView(selectedTab: .constant(0))
             .modelContainer(previewer.container)
     } catch {
         return Text("Failed to create preview: \(error.localizedDescription)")

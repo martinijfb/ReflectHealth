@@ -21,6 +21,8 @@ struct ProgressView: View {
             return Calendar.current.date(byAdding: .second, value: 86399, to: today)!
         }()  // End of today
     
+    @Binding var selectedTab: Int
+    
     var body: some View {
         NavigationStack {
             ProgressListingView(sort: sortOrder, startDate: startDate, endDate: endDate)
@@ -32,7 +34,7 @@ struct ProgressView: View {
                 }
                 .toolbar {
                     ToolbarItem(placement: .topBarLeading) {
-                        Button("Add Samples", action: addSamples)
+                        Button("Track Progress", action: addSamples)
                     }
                     
                     ToolbarItem(placement: .topBarTrailing) {
@@ -68,26 +70,29 @@ struct ProgressView: View {
     
     
     func addSamples() {
+        selectedTab = 2
         let image1 = UIImage(named: "pikachu")!.pngData()!
         let image2 = UIImage(named: "charizard")!.pngData()!
         let image3 = UIImage(named: "rayquaza")!.pngData()!
         
         let notes = "These are sample notes, do not do anything with this dlaubculcxfncfluinh udfhcn xuiewfnxciuhe fiuhfx luie eyfg ihfux."
         
-        let sample1 = TrackedData(image1: image1, image2: image2, image3: image3, notes: notes)
-        let sample2 = TrackedData(image1: image2, image2: image3, image3: image1, notes: notes)
-        let sample3 = TrackedData(image1: image3, image2: image1, image3: image2, notes: notes)
+        let sample1 = TrackedData(date: .now.addingTimeInterval(-86400 * 7), image1: image1, image2: image2, image3: image3, notes: notes)
+        let sample2 = TrackedData(date: .now.addingTimeInterval(-86400 * 30), image1: image2, image2: image3, image3: image1, notes: notes)
+        let sample3 = TrackedData(date: .now.addingTimeInterval(-86400 * 30), image1: image3, image2: image1, image3: image2, notes: notes)
+        let sample4 = TrackedData(image1: image3, image2: image1, image3: image2, notes: notes)
         
         modelContext.insert(sample1)
         modelContext.insert(sample2)
         modelContext.insert(sample3)
+        modelContext.insert(sample4)
     }
 }
 
 #Preview {
     do {
         let previewer = try Previewer()
-        return ProgressView()
+        return ProgressView(selectedTab: .constant(0))
             .modelContainer(previewer.container)
     } catch {
         return Text("Failed to create preview: \(error.localizedDescription)")

@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5B5FE2502BDAA35C00D77431 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5FE24F2BDAA35C00D77431 /* HomeView.swift */; };
+		5B5FE2552BDBF2F100D77431 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5FE2542BDBF2F100D77431 /* HomeViewModel.swift */; };
+		5B5FE2592BDC83B100D77431 /* EditProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5FE2582BDC83B100D77431 /* EditProfileView.swift */; };
+		5B5FE25B2BDC868100D77431 /* ProfileImageSelectorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5FE25A2BDC868100D77431 /* ProfileImageSelectorView.swift */; };
+		5B5FE25F2BDDC71A00D77431 /* Gender.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5FE25E2BDDC71A00D77431 /* Gender.swift */; };
+		5B5FE2612BDDCBA000D77431 /* Fitzpatrick.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5FE2602BDDCBA000D77431 /* Fitzpatrick.swift */; };
+		5B5FE2692BDFACE400D77431 /* LastProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5FE2682BDFACE400D77431 /* LastProgressView.swift */; };
 		5BB061BD2BD9389B00C7601B /* TrackedData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BB061BC2BD9389B00C7601B /* TrackedData.swift */; };
 		5BB061C42BD9412B00C7601B /* ProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BB061C32BD9412B00C7601B /* ProgressView.swift */; };
 		5BB061C62BD950C000C7601B /* LabelView+SwiftData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BB061C52BD950C000C7601B /* LabelView+SwiftData.swift */; };
@@ -37,6 +44,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5B5FE24F2BDAA35C00D77431 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		5B5FE2542BDBF2F100D77431 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		5B5FE2582BDC83B100D77431 /* EditProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileView.swift; sourceTree = "<group>"; };
+		5B5FE25A2BDC868100D77431 /* ProfileImageSelectorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileImageSelectorView.swift; sourceTree = "<group>"; };
+		5B5FE25E2BDDC71A00D77431 /* Gender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gender.swift; sourceTree = "<group>"; };
+		5B5FE2602BDDCBA000D77431 /* Fitzpatrick.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fitzpatrick.swift; sourceTree = "<group>"; };
+		5B5FE2682BDFACE400D77431 /* LastProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LastProgressView.swift; sourceTree = "<group>"; };
 		5BB061BC2BD9389B00C7601B /* TrackedData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackedData.swift; sourceTree = "<group>"; };
 		5BB061C32BD9412B00C7601B /* ProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressView.swift; sourceTree = "<group>"; };
 		5BB061C52BD950C000C7601B /* LabelView+SwiftData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LabelView+SwiftData.swift"; sourceTree = "<group>"; };
@@ -114,6 +128,20 @@
 			path = ViewModels;
 			sourceTree = "<group>";
 		};
+		5B5FE2512BDAA36400D77431 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				5B5FE24F2BDAA35C00D77431 /* HomeView.swift */,
+				5B5FE2542BDBF2F100D77431 /* HomeViewModel.swift */,
+				5B5FE2582BDC83B100D77431 /* EditProfileView.swift */,
+				5B5FE25A2BDC868100D77431 /* ProfileImageSelectorView.swift */,
+				5B5FE25E2BDDC71A00D77431 /* Gender.swift */,
+				5B5FE2602BDDCBA000D77431 /* Fitzpatrick.swift */,
+				5B5FE2682BDFACE400D77431 /* LastProgressView.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
 		5BB061B72BD9359800C7601B /* Entities */ = {
 			isa = PBXGroup;
 			children = (
@@ -155,6 +183,7 @@
 			children = (
 				5BC166B12BD6A7860020611B /* Info.plist */,
 				5BC166932BD6901E0020611B /* Core */,
+				5B5FE2512BDAA36400D77431 /* Home */,
 				5BC166942BD690AD0020611B /* CameraTrack */,
 				5BB061C22BD9410400C7601B /* Progress */,
 				5BB061B72BD9359800C7601B /* Entities */,
@@ -271,20 +300,27 @@
 				5BC166AA2BD6933D0020611B /* CanvasView.swift in Sources */,
 				5BB061D42BDA7E5500C7601B /* ProgressListingView.swift in Sources */,
 				5BB061BD2BD9389B00C7601B /* TrackedData.swift in Sources */,
+				5B5FE25F2BDDC71A00D77431 /* Gender.swift in Sources */,
 				5BC166A22BD692150020611B /* ControlButtonView.swift in Sources */,
+				5B5FE2502BDAA35C00D77431 /* HomeView.swift in Sources */,
 				5BC166962BD690E70020611B /* CameraView.swift in Sources */,
+				5B5FE2552BDBF2F100D77431 /* HomeViewModel.swift in Sources */,
+				5B5FE2692BDFACE400D77431 /* LastProgressView.swift in Sources */,
 				5BB061C42BD9412B00C7601B /* ProgressView.swift in Sources */,
 				5BB061C62BD950C000C7601B /* LabelView+SwiftData.swift in Sources */,
 				5BC1669E2BD691B90020611B /* LabelView.swift in Sources */,
+				5B5FE2592BDC83B100D77431 /* EditProfileView.swift in Sources */,
 				5BC166982BD691180020611B /* CameraViewModel.swift in Sources */,
 				5BB061CA2BD9699000C7601B /* EditTrackedDataView.swift in Sources */,
 				5BC166872BD68FB00020611B /* ContentView.swift in Sources */,
 				5BC166AE2BD6A1150020611B /* LabelView+.swift in Sources */,
 				5BB061D22BDA7B4600C7601B /* DateRangePickerSheet.swift in Sources */,
+				5B5FE25B2BDC868100D77431 /* ProfileImageSelectorView.swift in Sources */,
 				5BC166A62BD692990020611B /* LabelViewModel.swift in Sources */,
 				5BB061CE2BD9CE6600C7601B /* DrawingView.swift in Sources */,
 				5BC166852BD68FB00020611B /* ReflectHealthApp.swift in Sources */,
 				5BC166A82BD6930F0020611B /* ToolType.swift in Sources */,
+				5B5FE2612BDDCBA000D77431 /* Fitzpatrick.swift in Sources */,
 				5BC166A42BD6923D0020611B /* View+.swift in Sources */,
 				5BC166AC2BD6969B0020611B /* CanvasToolsView.swift in Sources */,
 				5BC1669C2BD691690020611B /* CameraView+ControlBar.swift in Sources */,
@@ -426,6 +462,8 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ReflectHealth/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "We need access to the camera so you can track your progress";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "We need access to your Photo Library so you can set a profile image";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen.storyboard";
@@ -457,6 +495,8 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ReflectHealth/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "We need access to the camera so you can track your progress";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "We need access to your Photo Library so you can set a profile image";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen.storyboard";

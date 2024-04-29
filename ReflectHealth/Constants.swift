@@ -26,5 +26,21 @@ struct Gradients {
         startPoint: .topLeading,
         endPoint: .bottomTrailing
     )
+    
+    static let customGradientLogo = LinearGradient(
+        colors: [Color.blue, Color(#colorLiteral(red: 0, green: 0.5898008943, blue: 1, alpha: 1))],
+        startPoint: .leading,
+        endPoint: .trailing
+    )
 }
 
+#Preview {
+    do {
+        let previewer = try Previewer()
+        
+        return HomeView(selectedTab: .constant(0))
+            .modelContainer(previewer.container)
+    } catch {
+        return Text("Failed to create preview: \(error.localizedDescription)")
+    }
+}
