@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct CameraView: View {
-
+    
     
     @State internal var vm = CameraViewModel()
     
@@ -20,7 +20,7 @@ struct CameraView: View {
     
     
     var body: some View {
-        ZStack {
+        ZStack(alignment: .top) {
             
             Color.black
                 .ignoresSafeArea()
@@ -29,10 +29,33 @@ struct CameraView: View {
                 controlBar
                     .frame(height: controlFrameHeight)
             }
-            
+            cameraFaceSideSelector(imageData: imageData)
         }
     }
     
+    @ViewBuilder
+    func cameraFaceSideSelector(imageData: [Data]) -> some View {
+        HStack {
+            if imageData.isEmpty {
+                Text("Left side of your face")
+                    .font(.title3)
+                    .fontWeight(.semibold)
+            } else if imageData.count == 1 {
+                Text("Right side of your face")
+                    .font(.title3)
+                    .fontWeight(.semibold)
+            } else {
+                Text("Front of your face")
+                    .font(.title3)
+                    .fontWeight(.semibold)
+            }
+        }
+        .padding(.horizontal)
+        .padding(.vertical, 4)
+        .background(.ultraThinMaterial)
+        .clipShape(RoundedRectangle(cornerRadius: 10))
+        .padding(.vertical)
+    }
     
     private var cameraPreview: some View {
         

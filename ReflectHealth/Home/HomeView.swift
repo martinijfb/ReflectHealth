@@ -114,7 +114,6 @@ extension HomeView {
                         .padding(.horizontal)
                         .padding(.vertical, 4)
                         .background(.ultraThinMaterial)
-                        .background(Gradients.customGradientInverse)
                         .clipShape(RoundedRectangle(cornerRadius: 10))
                         .padding(.vertical)
                 }

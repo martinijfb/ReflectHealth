@@ -18,16 +18,17 @@ extension CameraView {
     }
 
     internal var controlBarPrePhoto: some View {
-        HStack {
-            cancelButton
-                .frame(width: controlButtonWidth)
-            Spacer()
-            photoCaptureButton
-            Spacer()
-            switchCameraButton
-                .frame(width: controlButtonWidth)
-        }
-        .padding(.top)
+
+            HStack {
+                cancelButton
+                    .frame(width: controlButtonWidth)
+                Spacer()
+                photoCaptureButton
+                Spacer()
+                switchCameraButton
+                    .frame(width: controlButtonWidth)
+            }
+            .padding(.top)
     }
 
     internal var controlBarPostPhoto: some View {

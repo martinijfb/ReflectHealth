@@ -27,12 +27,6 @@ extension CameraView {
         }
     }
     
-//    internal var cancelButton: some View {
-//        ControlButtonView(label: "Cancel") {
-//            showCamera = false
-//        }
-//    }
-    
     internal var cancelButton: some View {
         Button {
             showCamera = false
