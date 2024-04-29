@@ -11,9 +11,9 @@ import PhotosUI
 struct ProfileImageSelectorView: View {
     @Binding var vm: HomeViewModel
     var body: some View {
-        PhotosPicker(selection: $vm.imageSelection, matching: .images) {
+        PhotosPicker(selection: $vm.user.imageSelection, matching: .images) {
             
-            if let image = vm.selectedImage {
+            if let image = vm.user.profileImage {
                 Image(uiImage: image)
                     .resizable()
                     .scaledToFill()
@@ -33,5 +33,5 @@ struct ProfileImageSelectorView: View {
 }
 
 #Preview {
-    ProfileImageSelectorView(vm: .constant(HomeViewModel()))
+    ProfileImageSelectorView(vm: .constant(HomeViewModel(user: User(firstName: "Martin Jose", lastName: "Fernandes Bolaños", dateOfBirth: .now, email: "martin@123.com", username: "martinijfb", fitzpatrick: .I, gender: .preferNotToSay))))
 }

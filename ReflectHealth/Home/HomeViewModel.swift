@@ -11,31 +11,12 @@ import PhotosUI
 @Observable
 class HomeViewModel {
     
-    var firstName: String = "Martin Jose"
-    var lastName: String = "Fernandes Bolaños"
-    var dateOfBirth: Date = .now
-    private(set) var selectedImage: UIImage? = nil
-    var imageSelection: PhotosPickerItem? = nil {
-        didSet {
-            setImage(from: imageSelection)
-        }
-    }
-    var email: String = "martin@123.com"
-    var username: String = "martinijfb"
-    var fitzpatrick: Fitzpatrick = .I
-    var gender: Gender = .preferNotToSay
+    var user: User
     
-    private func setImage(from selection: PhotosPickerItem?) {
-        guard let selection else { return }
-        Task {
-            if let data = try? await selection.loadTransferable(type: Data.self) {
-                if let uiImage = UIImage(data: data) {
-                    selectedImage = uiImage
-                    return
-                }
-            }
-        }
+    init(user: User) {
+        self.user = user
     }
+    
     
     func getSunMoonImage() -> (String, Color) {
         let currentTime = Calendar.current.dateComponents([.hour], from: Date()).hour ?? 0

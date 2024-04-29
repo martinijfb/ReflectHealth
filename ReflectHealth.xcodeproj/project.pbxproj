@@ -13,7 +13,6 @@
 		5B5FE25B2BDC868100D77431 /* ProfileImageSelectorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5FE25A2BDC868100D77431 /* ProfileImageSelectorView.swift */; };
 		5B5FE25F2BDDC71A00D77431 /* Gender.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5FE25E2BDDC71A00D77431 /* Gender.swift */; };
 		5B5FE2612BDDCBA000D77431 /* Fitzpatrick.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5FE2602BDDCBA000D77431 /* Fitzpatrick.swift */; };
-		5B5FE2692BDFACE400D77431 /* LastProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5FE2682BDFACE400D77431 /* LastProgressView.swift */; };
 		5BB061BD2BD9389B00C7601B /* TrackedData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BB061BC2BD9389B00C7601B /* TrackedData.swift */; };
 		5BB061C42BD9412B00C7601B /* ProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BB061C32BD9412B00C7601B /* ProgressView.swift */; };
 		5BB061C62BD950C000C7601B /* LabelView+SwiftData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BB061C52BD950C000C7601B /* LabelView+SwiftData.swift */; };
@@ -41,6 +40,7 @@
 		5BC166AC2BD6969B0020611B /* CanvasToolsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC166AB2BD6969B0020611B /* CanvasToolsView.swift */; };
 		5BC166AE2BD6A1150020611B /* LabelView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC166AD2BD6A1150020611B /* LabelView+.swift */; };
 		5BC166B02BD6A4700020611B /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5BC166AF2BD6A4700020611B /* Launch Screen.storyboard */; };
+		5BE3FD9A2BDFD5F900DF3CAC /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BE3FD992BDFD5F900DF3CAC /* User.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,7 +50,6 @@
 		5B5FE25A2BDC868100D77431 /* ProfileImageSelectorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileImageSelectorView.swift; sourceTree = "<group>"; };
 		5B5FE25E2BDDC71A00D77431 /* Gender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gender.swift; sourceTree = "<group>"; };
 		5B5FE2602BDDCBA000D77431 /* Fitzpatrick.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fitzpatrick.swift; sourceTree = "<group>"; };
-		5B5FE2682BDFACE400D77431 /* LastProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LastProgressView.swift; sourceTree = "<group>"; };
 		5BB061BC2BD9389B00C7601B /* TrackedData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackedData.swift; sourceTree = "<group>"; };
 		5BB061C32BD9412B00C7601B /* ProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressView.swift; sourceTree = "<group>"; };
 		5BB061C52BD950C000C7601B /* LabelView+SwiftData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LabelView+SwiftData.swift"; sourceTree = "<group>"; };
@@ -80,6 +79,7 @@
 		5BC166AD2BD6A1150020611B /* LabelView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LabelView+.swift"; sourceTree = "<group>"; };
 		5BC166AF2BD6A4700020611B /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		5BC166B12BD6A7860020611B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		5BE3FD992BDFD5F900DF3CAC /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,7 +137,7 @@
 				5B5FE25A2BDC868100D77431 /* ProfileImageSelectorView.swift */,
 				5B5FE25E2BDDC71A00D77431 /* Gender.swift */,
 				5B5FE2602BDDCBA000D77431 /* Fitzpatrick.swift */,
-				5B5FE2682BDFACE400D77431 /* LastProgressView.swift */,
+				5BE3FD992BDFD5F900DF3CAC /* User.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -298,6 +298,7 @@
 				5BB061D02BD9FC0D00C7601B /* Constants.swift in Sources */,
 				5BC166A02BD691F80020611B /* CameraPreview.swift in Sources */,
 				5BC166AA2BD6933D0020611B /* CanvasView.swift in Sources */,
+				5BE3FD9A2BDFD5F900DF3CAC /* User.swift in Sources */,
 				5BB061D42BDA7E5500C7601B /* ProgressListingView.swift in Sources */,
 				5BB061BD2BD9389B00C7601B /* TrackedData.swift in Sources */,
 				5B5FE25F2BDDC71A00D77431 /* Gender.swift in Sources */,
@@ -305,7 +306,6 @@
 				5B5FE2502BDAA35C00D77431 /* HomeView.swift in Sources */,
 				5BC166962BD690E70020611B /* CameraView.swift in Sources */,
 				5B5FE2552BDBF2F100D77431 /* HomeViewModel.swift in Sources */,
-				5B5FE2692BDFACE400D77431 /* LastProgressView.swift in Sources */,
 				5BB061C42BD9412B00C7601B /* ProgressView.swift in Sources */,
 				5BB061C62BD950C000C7601B /* LabelView+SwiftData.swift in Sources */,
 				5BC1669E2BD691B90020611B /* LabelView.swift in Sources */,

@@ -11,10 +11,8 @@ import SwiftData
 
 struct HomeView: View {
     
-    @State var vm = HomeViewModel()
+    @State var vm = HomeViewModel(user: User(firstName: "Martin Jose", lastName: "Fernandes Bolaños", dateOfBirth: .now, email: "martin@123.com", username: "martinijfb", fitzpatrick: .I, gender: .preferNotToSay))
     @Binding var selectedTab: Int
-    
-    @State private var showNavigationBar = true
     
     @Environment(\.modelContext) var modelContext
     @Query(sort: \TrackedData.date, order: .reverse) var trackedDataPieces: [TrackedData]
@@ -47,26 +45,25 @@ struct HomeView: View {
                         
                     }
                     .padding()
-                    .toolbar(.hidden, for: .navigationBar)
-                    .toolbar {
-                        ToolbarItem(placement: .topBarTrailing) {
-                            NavigationLink {
-                                EditProfileView(vm: $vm)
-                            } label: {
-                                Image(systemName: "person.crop.circle.fill")
-                                    .resizable()
-                                    .scaledToFit()
-                                    .foregroundStyle(Gradients.customGradientSheet)
-                            }
-                        }
-                        ToolbarItem(placement: .topBarLeading) {
-                            Image("logo-header")
-                                .resizable()
-                                .scaledToFit()
-                                .frame(height: 30)
-                                .foregroundStyle(Gradients.customGradientLogo)
-                        }
+                }
+            }
+            .toolbar {
+                ToolbarItem(placement: .topBarTrailing) {
+                    NavigationLink {
+                        EditProfileView(vm: $vm)
+                    } label: {
+                        Image(systemName: "person.crop.circle.fill")
+                            .resizable()
+                            .scaledToFit()
+                            .foregroundStyle(Gradients.customGradientSheet)
                     }
+                }
+                ToolbarItem(placement: .topBarLeading) {
+                    Image("logo-header")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(height: 20)
+                        .foregroundStyle(Gradients.customGradientLogo)
                 }
             }
             .toolbarBackground(.ultraThinMaterial, for: .tabBar)
@@ -78,17 +75,20 @@ struct HomeView: View {
 extension HomeView {
     
     @ViewBuilder
-    func ImageLabel(image: UIImage, drawingData: Data) -> some View {
+    func ImageLabel(image: UIImage, drawingData: Data?) -> some View {
         ZStack {
             Image(uiImage: image)
                 .resizable()
                 .scaledToFit()
                 .clipShape(RoundedRectangle(cornerRadius: 10.0))
-            if let drawingImage = UIImage(data: drawingData) {
-                Image(uiImage: drawingImage)
-                    .resizable()
-                    .scaledToFit()
-                    .clipShape(RoundedRectangle(cornerRadius: 10.0))
+            
+            if let safeData = drawingData {
+                if let drawingImage = UIImage(data: safeData) {
+                    Image(uiImage: drawingImage)
+                        .resizable()
+                        .scaledToFit()
+                        .clipShape(RoundedRectangle(cornerRadius: 10.0))
+                }
             }
         }
     }
@@ -99,19 +99,16 @@ extension HomeView {
         if let lastTrack = trackedDataPieces.first,
            let image1 = UIImage(data: lastTrack.image1),
            let image2 = UIImage(data: lastTrack.image2),
-           let image3 =  UIImage(data: lastTrack.image3),
-           let drawingData1 = lastTrack.drawing1,
-           let drawingData2 = lastTrack.drawing2,
-           let drawingData3 = lastTrack.drawing3 {
+           let image3 =  UIImage(data: lastTrack.image3) {
             HStack {
                 Spacer()
                 ZStack(alignment: .top) {
                     TabView {
-                        ImageLabel(image: image1, drawingData: drawingData1)
-                        ImageLabel(image: image2, drawingData: drawingData2)
-                        ImageLabel(image: image3, drawingData: drawingData3)
+                        ImageLabel(image: image1, drawingData: lastTrack.drawing1)
+                        ImageLabel(image: image2, drawingData: lastTrack.drawing2)
+                        ImageLabel(image: image3, drawingData: lastTrack.drawing3)
                     }
-                    .frame(width: 300, height: 400)
+                    .frame(width: 350, height: 400)
                     .tabViewStyle(.page)
                     Text(lastTrack.date.formatted(date: .long, time: .shortened))
                         .padding(.horizontal)
@@ -163,12 +160,12 @@ extension HomeView {
             ProfileImageSelectorView(vm: $vm)
                 .padding(.trailing)
             VStack(alignment: .leading) {
-                Text(vm.firstName + " " + vm.lastName)
+                Text(vm.user.firstName + " " + vm.user.lastName)
                     .font(.largeTitle)
                     .fontWeight(.bold)
                     .lineLimit(2)
                     .minimumScaleFactor(0.5)
-                Text("@" + vm.username)
+                Text("@" + vm.user.username)
                     .font(.headline)
                     .foregroundStyle(.secondary)
                     .lineLimit(1)

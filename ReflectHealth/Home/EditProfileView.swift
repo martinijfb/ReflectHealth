@@ -22,7 +22,7 @@ struct EditProfileView: View {
                     Section("Profile Picture and Account") {
                     
                             ZStack {
-                                if let image = vm.selectedImage {
+                                if let image = vm.user.profileImage {
                                     Image(uiImage: image)
                                         .blur(radius: 10.0)
                                 }
@@ -31,19 +31,19 @@ struct EditProfileView: View {
                             .frame(maxWidth: .infinity)
                             .frame(height: 120)
                             
-                            formField(label: "Username", text: $vm.username, formSpacing: formSpacing, textContentType: .username)
+                        formField(label: "Username", text: $vm.user.username, formSpacing: formSpacing, textContentType: .username)
                    
                     }
                     
                     Section("Personal Information") {
                      
-                            formField(label: "First Name", text: $vm.firstName, formSpacing: formSpacing, textContentType: .givenName)
-                            formField(label: "Surname", text: $vm.lastName, formSpacing: formSpacing, textContentType: .familyName)
-                            formField(label: "Email", text: $vm.email, formSpacing: formSpacing, textContentType: .emailAddress, keyboardType: .emailAddress)
+                        formField(label: "First Name", text: $vm.user.firstName, formSpacing: formSpacing, textContentType: .givenName)
+                        formField(label: "Surname", text: $vm.user.lastName, formSpacing: formSpacing, textContentType: .familyName)
+                        formField(label: "Email", text: $vm.user.email, formSpacing: formSpacing, textContentType: .emailAddress, keyboardType: .emailAddress)
                             
-                            DatePicker("Birthday", selection: $vm.dateOfBirth, displayedComponents: .date)
+                        DatePicker("Birthday", selection: $vm.user.dateOfBirth, displayedComponents: .date)
                             
-                            Picker("Select Gender", selection: $vm.gender) {
+                        Picker("Select Gender", selection: $vm.user.gender) {
                                 ForEach(Gender.allCases, id: \.self) { gender in
                                     Text(gender.rawValue).tag(gender)
                                 }
@@ -79,7 +79,7 @@ extension EditProfileView {
 
     // View variable for Fitzpatrick picker
     internal var fitzpatrickSection: some View {
-        Picker("Fitzpatrick", selection: $vm.fitzpatrick) {  // Picker to set gender
+        Picker("Fitzpatrick", selection: $vm.user.fitzpatrick) {  // Picker to set gender
             ForEach(Fitzpatrick.allCases, id: \.self) { scale in  // Iterate over all cases
                 HStack {
                     Rectangle()
@@ -97,5 +97,5 @@ extension EditProfileView {
 
 
 #Preview {
-    EditProfileView(vm: .constant(HomeViewModel()))
+    EditProfileView(vm: .constant(HomeViewModel(user: User(firstName: "Martin Jose", lastName: "Fernandes Bolaños", dateOfBirth: .now, email: "martin@123.com", username: "martinijfb", fitzpatrick: .I, gender: .preferNotToSay))))
 }
