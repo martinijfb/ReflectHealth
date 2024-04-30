@@ -41,6 +41,7 @@
 		5BC166AE2BD6A1150020611B /* LabelView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC166AD2BD6A1150020611B /* LabelView+.swift */; };
 		5BC166B02BD6A4700020611B /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5BC166AF2BD6A4700020611B /* Launch Screen.storyboard */; };
 		5BE3FD9A2BDFD5F900DF3CAC /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BE3FD992BDFD5F900DF3CAC /* User.swift */; };
+		5BE3FD9C2BE02BF600DF3CAC /* CanvasToolView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BE3FD9B2BE02BF600DF3CAC /* CanvasToolView2.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -80,6 +81,7 @@
 		5BC166AF2BD6A4700020611B /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		5BC166B12BD6A7860020611B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		5BE3FD992BDFD5F900DF3CAC /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		5BE3FD9B2BE02BF600DF3CAC /* CanvasToolView2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanvasToolView2.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +109,7 @@
 				5BC166AB2BD6969B0020611B /* CanvasToolsView.swift */,
 				5BC166A12BD692150020611B /* ControlButtonView.swift */,
 				5BC166A32BD6923D0020611B /* View+.swift */,
+				5BE3FD9B2BE02BF600DF3CAC /* CanvasToolView2.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -317,6 +320,7 @@
 				5BB061D22BDA7B4600C7601B /* DateRangePickerSheet.swift in Sources */,
 				5B5FE25B2BDC868100D77431 /* ProfileImageSelectorView.swift in Sources */,
 				5BC166A62BD692990020611B /* LabelViewModel.swift in Sources */,
+				5BE3FD9C2BE02BF600DF3CAC /* CanvasToolView2.swift in Sources */,
 				5BB061CE2BD9CE6600C7601B /* DrawingView.swift in Sources */,
 				5BC166852BD68FB00020611B /* ReflectHealthApp.swift in Sources */,
 				5BC166A82BD6930F0020611B /* ToolType.swift in Sources */,

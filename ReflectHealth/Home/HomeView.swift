@@ -66,8 +66,6 @@ struct HomeView: View {
                         .foregroundStyle(Gradients.customGradientLogo)
                 }
             }
-            .toolbarBackground(.ultraThinMaterial, for: .tabBar)
-            .toolbarBackground(.ultraThinMaterial, for: .navigationBar)
         }
     }
 }

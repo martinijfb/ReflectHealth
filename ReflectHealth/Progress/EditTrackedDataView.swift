@@ -24,45 +24,11 @@ struct EditTrackedDataView: View {
                    let image3 =  UIImage(data: trackDataPiece.image3) {
                     
                     TabView {
-                        
-                        
-                        Group {
-                            ZStack {
-                                Image(uiImage: image1)
-                                    .resizable()
-                                if let drawingData1 = trackDataPiece.drawing1 {
-                                    if let drawingImage1 = UIImage(data: drawingData1) {
-                                        Image(uiImage: drawingImage1)
-                                    }
-                                }
-                            }
-                                
-                            
-                            ZStack {
-                                Image(uiImage: image2)
-                                    .resizable()
-                                if let drawingData2 = trackDataPiece.drawing2 {
-                                    if let drawingImage2 = UIImage(data: drawingData2) {
-                                        Image(uiImage: drawingImage2)
-                                    }
-                                }
-                            }
-                                
-                            
-                            ZStack {
-                                Image(uiImage: image3)
-                                    .resizable()
-                                if let drawingData3 = trackDataPiece.drawing3 {
-                                    if let drawingImage3 = UIImage(data: drawingData3) {
-                                        Image(uiImage: drawingImage3)
-                                    }
-                                }
-                            }
-                        }
-                        .scaledToFit()
-                        .clipShape(RoundedRectangle(cornerRadius: 10.0))
+                        ImageLabel(image: image1, drawingData: trackDataPiece.drawing1)
+                        ImageLabel(image: image2, drawingData: trackDataPiece.drawing2)
+                        ImageLabel(image: image3, drawingData: trackDataPiece.drawing3)
                     }
-                    .frame(maxHeight: 500)
+                    .frame(maxWidth: .infinity)
                     .tabViewStyle(.page(indexDisplayMode: .always))
                     
                 } else {
@@ -108,6 +74,29 @@ struct EditTrackedDataView: View {
         }
         
     }
+}
+
+extension EditTrackedDataView {
+    
+    @ViewBuilder
+    func ImageLabel(image: UIImage, drawingData: Data?) -> some View {
+        ZStack {
+            Image(uiImage: image)
+                .resizable()
+                .scaledToFit()
+                .clipShape(RoundedRectangle(cornerRadius: 10.0))
+            
+            if let safeData = drawingData {
+                if let drawingImage = UIImage(data: safeData) {
+                    Image(uiImage: drawingImage)
+                        .resizable()
+                        .scaledToFit()
+                        .clipShape(RoundedRectangle(cornerRadius: 10.0))
+                }
+            }
+        }
+    }
+    
 }
 
 #Preview {

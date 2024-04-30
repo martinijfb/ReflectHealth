@@ -20,19 +20,19 @@ struct LabelView: View {
                     // Show all this if there is image data
                     if vm.imageData.count >= 3 {
                         
-                        // Show Labelling Toolbar when not using keyboard
-                        if !textEditorInFocus {
-                            let currentCanvas = currentCanvasView(selectedTab: vm.selectedTab)
-                            CanvasToolsView(
-                                toolType: $vm.toolType,
-                                selectedColor: $vm.selectedColor,
-                                undo: { vm.undo(on: currentCanvas) },
-                                clearCanvas: { vm.clearCanvas(on: currentCanvas) }
-                            )
+                        ZStack(alignment: .top) {
+                            // Display an image and canvas depending on picker value
+                            getTabContent(selectedTab: vm.selectedTab)
+                            // Show Labelling Toolbar when not using keyboard
+                            if !textEditorInFocus {
+                                let currentCanvas = currentCanvasView(selectedTab: vm.selectedTab)
+                                CanvasToolsView2(
+                                    toolType: $vm.toolType,
+                                    undo: { vm.undo(on: currentCanvas) },
+                                    clearCanvas: { vm.clearCanvas(on: currentCanvas) }
+                                )
+                            }
                         }
-                        
-                        // Display an image and canvas depending on picker value
-                        getTabContent(selectedTab: vm.selectedTab)
                         
                         // Display Picker
                         imageToLabelPicker(selectedTab: $vm.selectedTab)

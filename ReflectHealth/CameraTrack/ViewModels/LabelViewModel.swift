@@ -27,7 +27,7 @@ class LabelViewModel: ObservableObject {
     var canvasViewLeft = PKCanvasView()
     var canvasViewRight = PKCanvasView()
     var canvasViewFront = PKCanvasView()
-    var selectedColor: Color = .blue
+    var selectedColor: Color = .indigo
     var toolType: ToolType = .pen
     var placeholderString: String = "Add notes here ..."
     

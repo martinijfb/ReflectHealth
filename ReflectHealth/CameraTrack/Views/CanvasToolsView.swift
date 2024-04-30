@@ -20,7 +20,7 @@ struct CanvasToolsView: View {
         HStack(spacing: 40) {
             Button(action: undo) {
                 Image(systemName: "arrow.uturn.left")
-                    .font(.title)
+//                    .font(.title)
                     .foregroundColor(.green)
             }
             
@@ -28,28 +28,30 @@ struct CanvasToolsView: View {
                 toolType = .pen
             } label: {
                 Image(systemName: "pencil.tip.crop.circle")
-                    .font(.title)
+//                    .font(.title)
                     .foregroundStyle(toolType == .pen ? selectedColor : .gray.opacity(0.5))
             }
             
             Button {
                 toolType = .eraser
             } label: {
-                Image(systemName: "eraser.line.dashed")
-                    .font(.title)
+//                Image(systemName: "eraser.line.dashed")
+                Image(systemName: "eraser.circle")
+//                    .font(.title)
                     .foregroundStyle(toolType == .eraser ? .indigo : .gray.opacity(0.5))
             }
             
-            ColorPicker("Color", selection: $selectedColor, supportsOpacity: false)
-                .labelsHidden()
-                .disabled(toolType == .eraser)
+//            ColorPicker("Color", selection: $selectedColor, supportsOpacity: false)
+//                .labelsHidden()
+//                .disabled(toolType == .eraser)
             
             Button(action: clearCanvas) {
                 Image(systemName: "xmark")
-                    .font(.title)
+//                    .font(.title)
                     .foregroundStyle(.red)
             }
         }
+        .font(.caption)
         .padding()
     }
 }
