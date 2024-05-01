@@ -78,28 +78,90 @@ extension LabelView {
     }
     
     internal var openCameraButton: some View {
-        VStack {
-            Text("Let's track your progress ⌛️")
-                .font(.callout)
-                .padding()
-            
-            Button {
-                vm.openCamera()
-            } label: {
-                Image(systemName: "camera.aperture")
-                    .resizable()
-                    .scaledToFit()
+            VStack {
+                Text("Let's track your progress ⌛️")
+                    .font(.callout)
                     .padding()
-                    .frame(width: 100, height: 100)
-                    .background(Gradients.customGradientInverse)
-                    .background(.ultraThinMaterial)
-                    .clipShape(RoundedRectangle(cornerRadius: 10.0))
+                
+                Menu {
+                    Button("Scanner", systemImage: "camera.metering.matrix") {
+                        vm.showScanner = true
+                        vm.imageData.removeAll()
+                    }
+                    Button("Camera", systemImage: "camera.fill") {
+                        vm.openCamera()
+                        vm.imageData.removeAll()
+                    }
+
+                } label: {
+                    Image(systemName: "camera.aperture")
+                        .resizable()
+                        .scaledToFit()
+                        .padding()
+                        .frame(width: 100, height: 100)
+                        .background(Gradients.customGradientInverse)
+                        .background(.ultraThinMaterial)
+                        .clipShape(RoundedRectangle(cornerRadius: 10.0))
+                }
+
+                
+    //            Button {
+    //                vm.openCamera()
+    //                vm.imageData.removeAll()
+    //            } label: {
+    //                Image(systemName: "camera.aperture")
+    //                    .resizable()
+    //                    .scaledToFit()
+    //                    .padding()
+    //                    .frame(width: 100, height: 100)
+    //                    .background(Gradients.customGradientInverse)
+    //                    .background(.ultraThinMaterial)
+    //                    .clipShape(RoundedRectangle(cornerRadius: 10.0))
+                    
+                    
+                    
+    //                ZStack {
+    //                    Image("person-outline")
+    //                        .resizable()
+    //                        .scaledToFit()
+    //                        .foregroundStyle(.indigo)
+    //
+    //                    Image("scanner-frame")
+    //                        .resizable()
+    //                        .scaledToFit()
+    //                        .foregroundStyle(.accent)
+    //
+    //                }
+    //                .padding()
+    //                .frame(width: 300)
+    //                .background(Gradients.customGradientInverse)
+    //                .background(.ultraThinMaterial)
+    //                .clipShape(RoundedRectangle(cornerRadius: 10.0))
+    //            }
+                Text("Open the Camera")
+                    .font(.headline)
+                    .padding()
+                
             }
-            Text("Open the Camera")
-                .font(.headline)
-                .padding()
-            
-        }
+        
+        
+//        VStack {
+//
+//                ZStack {
+//                    Image("person-outline")
+//                        .resizable()
+//                        .scaledToFit()
+//                        .foregroundStyle(.indigo)
+//
+//                    Image("scanner-frame")
+//                        .resizable()
+//                        .scaledToFit()
+//                        .foregroundStyle(.accent)
+//
+//                }
+//                .frame(width: 300)
+//
+//        }
     }
     
     @ViewBuilder

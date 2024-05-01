@@ -10,25 +10,25 @@ import SwiftUI
 
 struct Gradients {
     static let customGradient = LinearGradient(
-        colors: [Color.accentColor.opacity(0.1), Color.blue.opacity(0.2)],
+        colors: [Color.accentColor.opacity(0.1), Color.indigo.opacity(0.2)],
         startPoint: .topLeading,
         endPoint: .bottomTrailing
     )
     
     static let customGradientInverse = LinearGradient(
-        colors: [Color.blue.opacity(0.2), Color.accentColor.opacity(0.1)],
+        colors: [Color.indigo.opacity(0.2), Color.accentColor.opacity(0.1)],
         startPoint: .topLeading,
         endPoint: .bottomTrailing
     )
     
     static let customGradientSheet = LinearGradient(
-        colors: [Color.blue, Color.accentColor],
+        colors: [Color.indigo, Color.accentColor],
         startPoint: .topLeading,
         endPoint: .bottomTrailing
     )
     
     static let customGradientLogo = LinearGradient(
-        colors: [Color.blue, Color(#colorLiteral(red: 0, green: 0.5898008943, blue: 1, alpha: 1))],
+        colors: [Color.indigo, Color(#colorLiteral(red: 0, green: 0.5898008943, blue: 1, alpha: 1))],
         startPoint: .leading,
         endPoint: .trailing
     )

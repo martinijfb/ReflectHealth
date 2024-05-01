@@ -16,6 +16,13 @@ struct LabelView: View {
         NavigationStack {
             ZStack {
                 Gradients.customGradient.ignoresSafeArea()
+                if !(vm.imageData.count >= 3) {
+                    Image("background-1")
+                        .resizable()
+                        .scaledToFill()
+                        .foregroundStyle(.indigo.opacity(0.05))
+                        .ignoresSafeArea()
+                }
                 VStack {
                     // Show all this if there is image data
                     if vm.imageData.count >= 3 {
@@ -61,6 +68,7 @@ struct LabelView: View {
                     }
                 }
                 .fullScreenCamera(isPresented: $vm.showCamera, imageData: $vm.imageData)
+                .fullScreenScanner(isPresented: $vm.showScanner, imageData: $vm.imageData)
                 .sheet(isPresented: $vm.showSavedSheet, content: {
                     savedTrackDataSheet
             })

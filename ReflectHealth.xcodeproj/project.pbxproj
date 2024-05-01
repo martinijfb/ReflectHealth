@@ -42,6 +42,9 @@
 		5BC166B02BD6A4700020611B /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5BC166AF2BD6A4700020611B /* Launch Screen.storyboard */; };
 		5BE3FD9A2BDFD5F900DF3CAC /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BE3FD992BDFD5F900DF3CAC /* User.swift */; };
 		5BE3FD9C2BE02BF600DF3CAC /* CanvasToolView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BE3FD9B2BE02BF600DF3CAC /* CanvasToolView2.swift */; };
+		5BE3FE032BE2780900DF3CAC /* ScannerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BE3FE022BE2780900DF3CAC /* ScannerViewModel.swift */; };
+		5BE5D02D2BE2A69E00999759 /* ScannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BE5D02C2BE2A69E00999759 /* ScannerView.swift */; };
+		5BE5D02F2BE2E27600999759 /* ScannerInstructionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BE5D02E2BE2E27600999759 /* ScannerInstructionsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -82,6 +85,9 @@
 		5BC166B12BD6A7860020611B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		5BE3FD992BDFD5F900DF3CAC /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		5BE3FD9B2BE02BF600DF3CAC /* CanvasToolView2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanvasToolView2.swift; sourceTree = "<group>"; };
+		5BE3FE022BE2780900DF3CAC /* ScannerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannerViewModel.swift; sourceTree = "<group>"; };
+		5BE5D02C2BE2A69E00999759 /* ScannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannerView.swift; sourceTree = "<group>"; };
+		5BE5D02E2BE2E27600999759 /* ScannerInstructionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannerInstructionsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -219,11 +225,22 @@
 		5BC166942BD690AD0020611B /* CameraTrack */ = {
 			isa = PBXGroup;
 			children = (
+				5BE3FDFF2BE277B800DF3CAC /* Scanner */,
 				5B1B61E92BD6B64A00CC6091 /* ViewModels */,
 				5B1B61E72BD6B63A00CC6091 /* Views */,
 				5B1B61E82BD6B64300CC6091 /* Models */,
 			);
 			path = CameraTrack;
+			sourceTree = "<group>";
+		};
+		5BE3FDFF2BE277B800DF3CAC /* Scanner */ = {
+			isa = PBXGroup;
+			children = (
+				5BE3FE022BE2780900DF3CAC /* ScannerViewModel.swift */,
+				5BE5D02C2BE2A69E00999759 /* ScannerView.swift */,
+				5BE5D02E2BE2E27600999759 /* ScannerInstructionsView.swift */,
+			);
+			path = Scanner;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -300,6 +317,9 @@
 				5BC1669A2BD6914D0020611B /* CameraView+Buttons.swift in Sources */,
 				5BB061D02BD9FC0D00C7601B /* Constants.swift in Sources */,
 				5BC166A02BD691F80020611B /* CameraPreview.swift in Sources */,
+				5BE5D02D2BE2A69E00999759 /* ScannerView.swift in Sources */,
+				5BE3FE032BE2780900DF3CAC /* ScannerViewModel.swift in Sources */,
+				5BE5D02F2BE2E27600999759 /* ScannerInstructionsView.swift in Sources */,
 				5BC166AA2BD6933D0020611B /* CanvasView.swift in Sources */,
 				5BE3FD9A2BDFD5F900DF3CAC /* User.swift in Sources */,
 				5BB061D42BDA7E5500C7601B /* ProgressListingView.swift in Sources */,

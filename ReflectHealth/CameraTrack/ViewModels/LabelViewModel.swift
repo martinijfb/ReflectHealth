@@ -20,6 +20,7 @@ class LabelViewModel: ObservableObject {
 //    ]
 
     var showCamera: Bool = false
+    var showScanner: Bool = false
     var showSavedSheet: Bool = false
     var textEditorText: String = "Add notes here ..."
     var selectedTab: Int = 0

@@ -18,14 +18,25 @@ class HomeViewModel {
     }
     
     
+    //    func getSunMoonImage() -> (String, Color) {
+    //        let currentTime = Calendar.current.dateComponents([.hour], from: Date()).hour ?? 0
+    //        if currentTime < 12 {
+    //            // Return "sun.max" with yellow color from 00:00 to 11:59
+    //            return ("sun.max.fill", .yellow)
+    //
+    //        } else {
+    //            // Return "moon.fill" with blue color for the rest
+    //            return ("moon.fill", .blue)
+    //        }
+    //    }
+    
     func getSunMoonImage() -> (String, Color) {
         let currentTime = Calendar.current.dateComponents([.hour], from: Date()).hour ?? 0
-        if currentTime < 12 {
-            // Return "sun.max" with yellow color from 00:00 to 11:59
+        if currentTime >= 4 && currentTime < 18 {
+            // Return "sun.max.fill" with yellow color from 4:00 to 17:59
             return ("sun.max.fill", .yellow)
-
         } else {
-            // Return "moon.fill" with blue color for the rest
+            // Return "moon.fill" with blue color for the rest of the hours
             return ("moon.fill", .blue)
         }
     }

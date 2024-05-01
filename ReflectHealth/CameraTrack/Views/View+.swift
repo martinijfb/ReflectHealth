@@ -14,4 +14,11 @@ extension View {
                 CameraView(imageData: imageData, showCamera: isPresented)
             })
     }
+    
+    func fullScreenScanner(isPresented: Binding<Bool>, imageData: Binding<[Data]>) -> some View {
+        self
+            .fullScreenCover(isPresented: isPresented, content: {
+                ScannerView(imageData: imageData, showScanner: isPresented)
+            })
+    }
 }
