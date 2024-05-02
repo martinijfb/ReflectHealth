@@ -33,7 +33,7 @@ struct ScannerView: View {
                 ZStack {
                     ScannerViewModel(status: $status, matrix: $matrix, shouldRestartSession: $shouldRestartSession, shouldPauseSession: $shouldPauseSession, shouldStartSession: $shouldStartSession, imageData: $imageData, didInitiallyCalibrate: $didInitiallyCalibrate)
                     
-                    //                                    debuggingMatrix
+//                    debuggingMatrix
                     
                     RoundedRectangle(cornerRadius: 10)
                         .stroke(lineWidth: 2.0)
@@ -83,7 +83,7 @@ struct ScannerView: View {
                     
                 }
                 .frame(width: width, height: height)
-                .border(Color.indigo, width: 2)
+                .border(imageData.count == 3 ? Color.clear : Color.indigo, width: 2)
                 
             }
             .navigationTitle("Face Scanner")

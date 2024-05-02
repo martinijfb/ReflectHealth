@@ -29,7 +29,7 @@ struct EditTrackedDataView: View {
                         ImageLabel(image: image3, drawingData: trackDataPiece.drawing3)
                     }
                     .frame(maxWidth: .infinity)
-                    .tabViewStyle(.page(indexDisplayMode: .always))
+                    .tabViewStyle(.page)
                     
                 } else {
                     Text("Could not load the images")

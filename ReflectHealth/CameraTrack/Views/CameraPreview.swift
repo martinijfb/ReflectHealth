@@ -20,7 +20,7 @@ struct CameraPreview: UIViewRepresentable {
         view.layer.addSublayer(cameraVM.preview)
         
         
-        if let image = UIImage(named: "profile") { // replace "overlayImage" with your actual image name in assets
+        if let image = UIImage(named: "scanner-frame-white") {
             let imageLayer = CALayer()
             imageLayer.contents = image.cgImage
             imageLayer.frame = view.bounds // adjust according to your needs

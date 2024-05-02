@@ -71,6 +71,6 @@ struct CameraView: View {
     
 }
 
-//#Preview {
-//    CameraView(imageData: .constant(nil), showCamera: .constant(true))
-//}
+#Preview {
+    CameraView(imageData: .constant([Data]()), showCamera: .constant(true))
+}
