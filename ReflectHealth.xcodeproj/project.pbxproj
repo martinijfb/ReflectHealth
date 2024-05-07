@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5B2C121C2BEA7293006DFF65 /* SwiftyCrop in Frameworks */ = {isa = PBXBuildFile; productRef = 5B2C121B2BEA7293006DFF65 /* SwiftyCrop */; };
+		5B2C121F2BEA7AC2006DFF65 /* SwiftyCrop in Frameworks */ = {isa = PBXBuildFile; productRef = 5B2C121E2BEA7AC2006DFF65 /* SwiftyCrop */; };
 		5B5FE2502BDAA35C00D77431 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5FE24F2BDAA35C00D77431 /* HomeView.swift */; };
 		5B5FE2552BDBF2F100D77431 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5FE2542BDBF2F100D77431 /* HomeViewModel.swift */; };
 		5B5FE2592BDC83B100D77431 /* EditProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5FE2582BDC83B100D77431 /* EditProfileView.swift */; };
@@ -96,7 +96,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5B2C121C2BEA7293006DFF65 /* SwiftyCrop in Frameworks */,
+				5B2C121F2BEA7AC2006DFF65 /* SwiftyCrop in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -262,7 +262,7 @@
 			);
 			name = ReflectHealth;
 			packageProductDependencies = (
-				5B2C121B2BEA7293006DFF65 /* SwiftyCrop */,
+				5B2C121E2BEA7AC2006DFF65 /* SwiftyCrop */,
 			);
 			productName = ReflectHealth;
 			productReference = 5BC166812BD68FB00020611B /* ReflectHealth.app */;
@@ -293,7 +293,7 @@
 			);
 			mainGroup = 5BC166782BD68FB00020611B;
 			packageReferences = (
-				5B2C121A2BEA7293006DFF65 /* XCRemoteSwiftPackageReference "SwiftyCrop" */,
+				5B2C121D2BEA7AC2006DFF65 /* XCRemoteSwiftPackageReference "SwiftyCrop" */,
 			);
 			productRefGroup = 5BC166822BD68FB00020611B /* Products */;
 			projectDirPath = "";
@@ -572,7 +572,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		5B2C121A2BEA7293006DFF65 /* XCRemoteSwiftPackageReference "SwiftyCrop" */ = {
+		5B2C121D2BEA7AC2006DFF65 /* XCRemoteSwiftPackageReference "SwiftyCrop" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/benedom/SwiftyCrop";
 			requirement = {
@@ -583,9 +583,9 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		5B2C121B2BEA7293006DFF65 /* SwiftyCrop */ = {
+		5B2C121E2BEA7AC2006DFF65 /* SwiftyCrop */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 5B2C121A2BEA7293006DFF65 /* XCRemoteSwiftPackageReference "SwiftyCrop" */;
+			package = 5B2C121D2BEA7AC2006DFF65 /* XCRemoteSwiftPackageReference "SwiftyCrop" */;
 			productName = SwiftyCrop;
 		};
 /* End XCSwiftPackageProductDependency section */
