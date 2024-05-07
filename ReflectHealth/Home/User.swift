@@ -19,13 +19,6 @@ class User {
     var gender: Gender
     var profileImage: UIImage?
     
-    var imageSelection: PhotosPickerItem? = nil {
-        didSet {
-            setImage(from: imageSelection)
-        }
-    }
-
-    
     init(firstName: String, lastName: String, dateOfBirth: Date, email: String, username: String, fitzpatrick: Fitzpatrick, gender: Gender) {
         self.firstName = firstName
         self.lastName = lastName
@@ -36,15 +29,4 @@ class User {
         self.gender = gender
     }
     
-    private func setImage(from selection: PhotosPickerItem?) {
-        guard let selection else { return }
-        Task {
-            if let data = try? await selection.loadTransferable(type: Data.self) {
-                if let uiImage = UIImage(data: data) {
-                    profileImage = uiImage
-                    return
-                }
-            }
-        }
-    }
 }

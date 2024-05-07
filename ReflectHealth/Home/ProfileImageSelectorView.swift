@@ -7,11 +7,12 @@
 
 import SwiftUI
 import PhotosUI
+import SwiftyCrop
 
 struct ProfileImageSelectorView: View {
     @Binding var vm: HomeViewModel
     var body: some View {
-        PhotosPicker(selection: $vm.user.imageSelection, matching: .images) {
+        PhotosPicker(selection: $vm.imageSelection, matching: .images) {
             
             if let image = vm.user.profileImage {
                 Image(uiImage: image)
@@ -27,6 +28,25 @@ struct ProfileImageSelectorView: View {
                     .foregroundStyle(Color(uiColor: .systemGray6))
                     .clipShape(Circle())
                     .frame(width: 100, height: 100)
+            }
+        }
+        .fullScreenCover(isPresented: $vm.showImageCropper) {
+           cropView
+        }
+    }
+}
+
+extension ProfileImageSelectorView {
+    
+    @ViewBuilder
+    var cropView: some View {
+        if let selectedImage = vm.tempProfileImage {
+            SwiftyCropView(
+                imageToCrop: selectedImage,
+                maskShape: .circle,
+                configuration: vm.configuration
+            ) { croppedImage in
+                vm.user.profileImage = croppedImage
             }
         }
     }
