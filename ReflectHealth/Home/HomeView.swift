@@ -52,7 +52,7 @@ struct HomeView: View {
                     NavigationLink {
                         EditProfileView(vm: $vm)
                     } label: {
-                        Image(systemName: "person.crop.circle.fill")
+                        Image(systemName: "gearshape.fill")
                             .resizable()
                             .scaledToFit()
                             .foregroundStyle(Gradients.customGradientSheet)

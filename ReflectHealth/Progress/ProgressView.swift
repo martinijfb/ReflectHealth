@@ -34,7 +34,10 @@ struct ProgressView: View {
                 }
                 .toolbar {
                     ToolbarItem(placement: .topBarLeading) {
-                        Button("Track Progress", action: addSamples)
+                        Button("Track Progress", systemImage: "camera.fill", action: { selectedTab = 2})
+                    }
+                    ToolbarItem(placement: .topBarLeading) {
+                        Button("Track Progress", systemImage: "person.crop.rectangle.badge.plus", action: addSamples).tint(Color(.systemGray5))
                     }
                     
                     ToolbarItem(placement: .topBarTrailing) {
@@ -70,7 +73,6 @@ struct ProgressView: View {
     
     
     func addSamples() {
-        selectedTab = 2
         let image1 = UIImage(named: "pikachu")!.pngData()!
         let image2 = UIImage(named: "charizard")!.pngData()!
         let image3 = UIImage(named: "rayquaza")!.pngData()!
