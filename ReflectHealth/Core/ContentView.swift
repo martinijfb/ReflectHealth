@@ -29,7 +29,7 @@ struct ContentView: View {
                         Text("My Products")                }
                     .tag(1)
                 
-                LabelView()
+                ScannerView()
                     .tabItem {
                         Image(systemName: "camera.badge.clock.fill")
                         Text("Track")

@@ -8,10 +8,10 @@
 import SwiftUI
 import PencilKit
 
-struct CanvasView: UIViewRepresentable {
+struct CanvasViewOld: UIViewRepresentable {
     @Binding var canvasView: PKCanvasView
     var rect: CGRect
-    var toolType: ToolType
+    var toolType: ToolTypeOld
     var color: UIColor
     
     func makeUIView(context: Context) -> PKCanvasView {

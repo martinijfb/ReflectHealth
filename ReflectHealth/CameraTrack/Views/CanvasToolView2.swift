@@ -10,7 +10,7 @@ import SwiftUI
 import PencilKit
 
 struct CanvasToolsView2: View {
-    @Binding var toolType: ToolType
+    @Binding var toolType: ToolTypeOld
     var undo: () -> Void
     var clearCanvas: () -> Void
     var frameSize: CGFloat = 30
@@ -65,7 +65,7 @@ struct CanvasToolsView2: View {
 }
 
 struct CanvasToolsView2_Previews: PreviewProvider {
-    @State static var toolType: ToolType = .pen
+    @State static var toolType: ToolTypeOld = .pen
     
     static var previews: some View {
         CanvasToolsView2(

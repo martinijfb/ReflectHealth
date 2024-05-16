@@ -10,7 +10,7 @@ import RealityKit
 import ARKit
 
 
-struct ScannerView: View {
+struct ScannerViewOld: View {
     
     @State var status: String = "Please calibrate"
     @State var matrix = simd_float4x4()
@@ -31,7 +31,7 @@ struct ScannerView: View {
         NavigationStack {
             VStack {
                 ZStack {
-                    ScannerViewModel(status: $status, matrix: $matrix, shouldRestartSession: $shouldRestartSession, shouldPauseSession: $shouldPauseSession, shouldStartSession: $shouldStartSession, imageData: $imageData, didInitiallyCalibrate: $didInitiallyCalibrate)
+                    ScannerViewModelOld(status: $status, matrix: $matrix, shouldRestartSession: $shouldRestartSession, shouldPauseSession: $shouldPauseSession, shouldStartSession: $shouldStartSession, imageData: $imageData, didInitiallyCalibrate: $didInitiallyCalibrate)
                     
 //                    debuggingMatrix
                     
@@ -140,7 +140,7 @@ struct ScannerView: View {
     }
 }
 
-extension ScannerView {
+extension ScannerViewOld {
     
     @ViewBuilder
     var debuggingMatrix: some View {
@@ -192,7 +192,7 @@ extension ScannerView {
 }
 
 #Preview {
-    ScannerView(imageData: .constant([
+    ScannerViewOld(imageData: .constant([
         UIImage(named: "pikachu")!.pngData()!,
         UIImage(named: "charizard")!.pngData()!,
         UIImage(named: "rayquaza")!.pngData()!,
@@ -200,5 +200,5 @@ extension ScannerView {
 }
 
 #Preview {
-    ScannerView(imageData: .constant([Data]()), showScanner: .constant(true))
+    ScannerViewOld(imageData: .constant([Data]()), showScanner: .constant(true))
 }
