@@ -8,7 +8,7 @@
 import SwiftUI
 import PencilKit
 
-struct CanvasToolsView: View {
+struct CanvasToolsViewOld: View {
     
     @Binding var toolType: ToolType
     @Binding var selectedColor: Color
@@ -61,7 +61,7 @@ struct CanvasToolsView_Previews: PreviewProvider {
     @State static var selectedColor: Color = .blue
 
     static var previews: some View {
-        CanvasToolsView(
+        CanvasToolsViewOld(
             toolType: $toolType,
             selectedColor: $selectedColor,
             undo: { print("Undo") },

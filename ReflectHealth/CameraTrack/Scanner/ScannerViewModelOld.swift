@@ -10,7 +10,7 @@ import RealityKit
 import ARKit
 
 
-struct ScannerViewModel: UIViewRepresentable {
+struct ScannerViewModelOld: UIViewRepresentable {
     
     @Binding var status: String
     @Binding var matrix: simd_float4x4

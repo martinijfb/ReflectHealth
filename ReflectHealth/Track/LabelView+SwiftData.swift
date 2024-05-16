@@ -2,7 +2,7 @@
 //  LabelView+SwiftData.swift
 //  ReflectHealth
 //
-//  Created by Martin on 24/04/2024.
+//  Created by Martin on 16/05/2024.
 //
 
 import Foundation
@@ -10,13 +10,7 @@ import Foundation
 extension LabelView {
     internal func saveRecordedData() {
         
-        var notes: String {
-            if vm.textEditorText == vm.placeholderString {
-                return ""
-            } else {
-                return vm.textEditorText
-            }
-        }
+        let notes: String = vm.textEditorText
         
         let trackedData = TrackedData(
             image1: vm.imageData[0],

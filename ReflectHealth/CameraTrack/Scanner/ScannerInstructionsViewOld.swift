@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ScannerInstructionsView: View {
+struct ScannerInstructionsViewOld: View {
     @Environment(\.dismiss) private var dismiss
     @State var width = UIScreen.main.bounds.width
     var body: some View {
@@ -80,6 +80,6 @@ struct ScannerInstructionsView: View {
 
 #Preview {
     NavigationStack {
-        ScannerInstructionsView()
+        ScannerInstructionsViewOld()
     }
 }

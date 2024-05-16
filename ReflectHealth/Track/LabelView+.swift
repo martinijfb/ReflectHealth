@@ -2,7 +2,7 @@
 //  LabelView+.swift
 //  ReflectHealth
 //
-//  Created by Martin on 22/04/2024.
+//  Created by Martin on 16/05/2024.
 //
 
 import SwiftUI
@@ -66,6 +66,8 @@ extension LabelView {
     internal var deleteRecordedDataButton: some View {
         Button {
             vm.deleteRecordedData()
+            vm.shouldStartSession = true
+            dismiss()
         } label: {
             Image(systemName: "trash")
         }
@@ -77,111 +79,20 @@ extension LabelView {
         }
     }
     
-    internal var openCameraButton: some View {
-            VStack {
-                Text("Let's track your progress ⌛️")
-                    .font(.callout)
-                    .padding()
-                
-                Menu {
-                    Button("Scanner", systemImage: "camera.metering.matrix") {
-                        vm.showScanner = true
-                        vm.imageData.removeAll()
-                    }
-                    Button("Camera", systemImage: "camera.fill") {
-                        vm.openCamera()
-                        vm.imageData.removeAll()
-                    }
-
-                } label: {
-                    Image(systemName: "camera.aperture")
-                        .resizable()
-                        .scaledToFit()
-                        .padding()
-                        .frame(width: 100, height: 100)
-                        .background(Gradients.customGradientInverse)
-                        .background(.ultraThinMaterial)
-                        .clipShape(RoundedRectangle(cornerRadius: 10.0))
-                }
-
-                
-    //            Button {
-    //                vm.openCamera()
-    //                vm.imageData.removeAll()
-    //            } label: {
-    //                Image(systemName: "camera.aperture")
-    //                    .resizable()
-    //                    .scaledToFit()
-    //                    .padding()
-    //                    .frame(width: 100, height: 100)
-    //                    .background(Gradients.customGradientInverse)
-    //                    .background(.ultraThinMaterial)
-    //                    .clipShape(RoundedRectangle(cornerRadius: 10.0))
-                    
-                    
-                    
-    //                ZStack {
-    //                    Image("person-outline")
-    //                        .resizable()
-    //                        .scaledToFit()
-    //                        .foregroundStyle(.indigo)
-    //
-    //                    Image("scanner-frame")
-    //                        .resizable()
-    //                        .scaledToFit()
-    //                        .foregroundStyle(.accent)
-    //
-    //                }
-    //                .padding()
-    //                .frame(width: 300)
-    //                .background(Gradients.customGradientInverse)
-    //                .background(.ultraThinMaterial)
-    //                .clipShape(RoundedRectangle(cornerRadius: 10.0))
-    //            }
-                Text("Open the Camera")
-                    .font(.headline)
-                    .padding()
-                
-            }
-        
-        
-//        VStack {
-//
-//                ZStack {
-//                    Image("person-outline")
-//                        .resizable()
-//                        .scaledToFit()
-//                        .foregroundStyle(.indigo)
-//
-//                    Image("scanner-frame")
-//                        .resizable()
-//                        .scaledToFit()
-//                        .foregroundStyle(.accent)
-//
-//                }
-//                .frame(width: 300)
-//
-//        }
-    }
+    
     
     @ViewBuilder
-    internal func textEditorSection() -> some View {
+    internal var textEditorSection: some View {
         VStack {
             HStack {
-                TextEditor(text: $vm.textEditorText)
+                TextField("Notes", text: $vm.textEditorText, axis: .vertical)
                     .focused($textEditorInFocus)
-                    .foregroundStyle(vm.textEditorText == vm.placeholderString ? .secondary : .primary)
-                    .onTapGesture {
-                        vm.clearTextEditor()
-                    }
-                    .onChange(of: textEditorInFocus) {
-                        if !textEditorInFocus {
-                            vm.validateTextEditor()
-                        }
-                    }
-                    .frame(height: 80)
-                    .colorMultiply(Color(uiColor: .systemGray6))
+                    .padding()
+                    .lineLimit(4)
+                    .background(Color(uiColor: .systemGray6))
                     .clipShape(RoundedRectangle(cornerRadius: 10.0))
+
+                
                 
                 if textEditorInFocus {
                     Button {
@@ -248,13 +159,14 @@ extension LabelView {
     
     var savedTrackDataSheet: some View {
         ZStack {
-//            Color.accentColor.ignoresSafeArea()
             Gradients.customGradientSheet.ignoresSafeArea()
                 .overlay(.ultraThinMaterial)
             VStack {
                 HStack {
                     Button {
                         vm.showSavedSheet = false
+                        vm.shouldStartSession = true
+                        dismiss()
                     } label: {
                         Image(systemName: "xmark")
                             .font(.largeTitle)
@@ -277,5 +189,21 @@ extension LabelView {
 }
 
 #Preview {
-    LabelView()
+    @State var vm = ScannerViewModel()
+    return NavigationStack {
+        LabelView(vm: $vm)
+    }
+}
+
+#Preview {
+    @State var vm = ScannerViewModel()
+    let imageData: [Data] = [
+                UIImage(named: "pikachu")!.pngData()!,
+                UIImage(named: "charizard")!.pngData()!,
+                UIImage(named: "rayquaza")!.pngData()!
+    ]
+    vm.imageData.append(contentsOf: imageData)
+    return NavigationStack {
+        LabelView(vm: $vm)
+    }
 }

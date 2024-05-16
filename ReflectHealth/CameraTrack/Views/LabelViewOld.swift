@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct LabelView: View {
+struct LabelViewOld: View {
     @Environment(\.modelContext) var modelContext
     @State internal var vm = LabelViewModel()
     @FocusState internal var textEditorInFocus: Bool
@@ -80,5 +80,5 @@ struct LabelView: View {
 
 
 #Preview {
-    LabelView()
+    LabelViewOld()
 }
