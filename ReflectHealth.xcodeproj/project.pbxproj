@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5B2C121F2BEA7AC2006DFF65 /* SwiftyCrop in Frameworks */ = {isa = PBXBuildFile; productRef = 5B2C121E2BEA7AC2006DFF65 /* SwiftyCrop */; };
+		5B3439422BF6E57800512FE6 /* StylesAndShapes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3439412BF6E57800512FE6 /* StylesAndShapes.swift */; };
 		5B5FE2502BDAA35C00D77431 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5FE24F2BDAA35C00D77431 /* HomeView.swift */; };
 		5B5FE2552BDBF2F100D77431 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5FE2542BDBF2F100D77431 /* HomeViewModel.swift */; };
 		5B5FE2592BDC83B100D77431 /* EditProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5FE2582BDC83B100D77431 /* EditProfileView.swift */; };
@@ -56,9 +56,11 @@
 		5BFD574D2BF61EA6006AABC2 /* CanvasView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BFD574C2BF61EA6006AABC2 /* CanvasView.swift */; };
 		5BFD574F2BF61EB7006AABC2 /* CanvasToolView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BFD574E2BF61EB7006AABC2 /* CanvasToolView.swift */; };
 		5BFD57512BF61EC4006AABC2 /* ToolType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BFD57502BF61EC4006AABC2 /* ToolType.swift */; };
+		5BFD57542BF63116006AABC2 /* SwiftyCrop in Frameworks */ = {isa = PBXBuildFile; productRef = 5BFD57532BF63116006AABC2 /* SwiftyCrop */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5B3439412BF6E57800512FE6 /* StylesAndShapes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StylesAndShapes.swift; sourceTree = "<group>"; };
 		5B5FE24F2BDAA35C00D77431 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		5B5FE2542BDBF2F100D77431 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		5B5FE2582BDC83B100D77431 /* EditProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileView.swift; sourceTree = "<group>"; };
@@ -116,7 +118,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5B2C121F2BEA7AC2006DFF65 /* SwiftyCrop in Frameworks */,
+				5BFD57542BF63116006AABC2 /* SwiftyCrop in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -222,6 +224,7 @@
 				5BC166942BD690AD0020611B /* CameraTrack */,
 				5BC1668A2BD68FB40020611B /* Preview Content */,
 				5BB061CF2BD9FC0D00C7601B /* Constants.swift */,
+				5B3439412BF6E57800512FE6 /* StylesAndShapes.swift */,
 			);
 			path = ReflectHealth;
 			sourceTree = "<group>";
@@ -300,7 +303,7 @@
 			);
 			name = ReflectHealth;
 			packageProductDependencies = (
-				5B2C121E2BEA7AC2006DFF65 /* SwiftyCrop */,
+				5BFD57532BF63116006AABC2 /* SwiftyCrop */,
 			);
 			productName = ReflectHealth;
 			productReference = 5BC166812BD68FB00020611B /* ReflectHealth.app */;
@@ -331,7 +334,7 @@
 			);
 			mainGroup = 5BC166782BD68FB00020611B;
 			packageReferences = (
-				5B2C121D2BEA7AC2006DFF65 /* XCRemoteSwiftPackageReference "SwiftyCrop" */,
+				5BFD57522BF63116006AABC2 /* XCRemoteSwiftPackageReference "SwiftyCrop" */,
 			);
 			productRefGroup = 5BC166822BD68FB00020611B /* Products */;
 			projectDirPath = "";
@@ -391,6 +394,7 @@
 				5BFD574F2BF61EB7006AABC2 /* CanvasToolView.swift in Sources */,
 				5BB061D22BDA7B4600C7601B /* DateRangePickerSheet.swift in Sources */,
 				5B5FE25B2BDC868100D77431 /* ProfileImageSelectorView.swift in Sources */,
+				5B3439422BF6E57800512FE6 /* StylesAndShapes.swift in Sources */,
 				5BC166A62BD692990020611B /* LabelViewModelOld.swift in Sources */,
 				5BE3FD9C2BE02BF600DF3CAC /* CanvasToolView2.swift in Sources */,
 				5BFD57472BF61E85006AABC2 /* LabelView.swift in Sources */,
@@ -620,7 +624,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		5B2C121D2BEA7AC2006DFF65 /* XCRemoteSwiftPackageReference "SwiftyCrop" */ = {
+		5BFD57522BF63116006AABC2 /* XCRemoteSwiftPackageReference "SwiftyCrop" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/benedom/SwiftyCrop";
 			requirement = {
@@ -631,9 +635,9 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		5B2C121E2BEA7AC2006DFF65 /* SwiftyCrop */ = {
+		5BFD57532BF63116006AABC2 /* SwiftyCrop */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 5B2C121D2BEA7AC2006DFF65 /* XCRemoteSwiftPackageReference "SwiftyCrop" */;
+			package = 5BFD57522BF63116006AABC2 /* XCRemoteSwiftPackageReference "SwiftyCrop" */;
 			productName = SwiftyCrop;
 		};
 /* End XCSwiftPackageProductDependency section */

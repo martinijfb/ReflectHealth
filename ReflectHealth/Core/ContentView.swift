@@ -60,3 +60,13 @@ struct ContentView: View {
         return Text("Failed to create preview: \(error.localizedDescription)")
     }
 }
+
+#Preview {
+    do {
+        let previewer = try NoDataPreviewer()
+        return ContentView()
+            .modelContainer(previewer.container)
+    } catch {
+        return Text("Failed to create preview: \(error.localizedDescription)")
+    }
+}
