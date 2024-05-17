@@ -14,6 +14,7 @@
 		5B5FE25B2BDC868100D77431 /* ProfileImageSelectorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5FE25A2BDC868100D77431 /* ProfileImageSelectorView.swift */; };
 		5B5FE25F2BDDC71A00D77431 /* Gender.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5FE25E2BDDC71A00D77431 /* Gender.swift */; };
 		5B5FE2612BDDCBA000D77431 /* Fitzpatrick.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5FE2602BDDCBA000D77431 /* Fitzpatrick.swift */; };
+		5BA1BF382BF6F079006E863E /* HomeView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA1BF372BF6F079006E863E /* HomeView+.swift */; };
 		5BB061BD2BD9389B00C7601B /* TrackedData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BB061BC2BD9389B00C7601B /* TrackedData.swift */; };
 		5BB061C42BD9412B00C7601B /* ProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BB061C32BD9412B00C7601B /* ProgressView.swift */; };
 		5BB061C62BD950C000C7601B /* LabelViewOld+SwiftData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BB061C52BD950C000C7601B /* LabelViewOld+SwiftData.swift */; };
@@ -67,6 +68,7 @@
 		5B5FE25A2BDC868100D77431 /* ProfileImageSelectorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileImageSelectorView.swift; sourceTree = "<group>"; };
 		5B5FE25E2BDDC71A00D77431 /* Gender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gender.swift; sourceTree = "<group>"; };
 		5B5FE2602BDDCBA000D77431 /* Fitzpatrick.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fitzpatrick.swift; sourceTree = "<group>"; };
+		5BA1BF372BF6F079006E863E /* HomeView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HomeView+.swift"; sourceTree = "<group>"; };
 		5BB061BC2BD9389B00C7601B /* TrackedData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackedData.swift; sourceTree = "<group>"; };
 		5BB061C32BD9412B00C7601B /* ProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressView.swift; sourceTree = "<group>"; };
 		5BB061C52BD950C000C7601B /* LabelViewOld+SwiftData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LabelViewOld+SwiftData.swift"; sourceTree = "<group>"; };
@@ -165,6 +167,7 @@
 			isa = PBXGroup;
 			children = (
 				5B5FE24F2BDAA35C00D77431 /* HomeView.swift */,
+				5BA1BF372BF6F079006E863E /* HomeView+.swift */,
 				5B5FE2542BDBF2F100D77431 /* HomeViewModel.swift */,
 				5B5FE2582BDC83B100D77431 /* EditProfileView.swift */,
 				5B5FE25A2BDC868100D77431 /* ProfileImageSelectorView.swift */,
@@ -406,6 +409,7 @@
 				5BFD57412BF61E59006AABC2 /* ScannerViewRepresentable.swift in Sources */,
 				5BC166AC2BD6969B0020611B /* CanvasToolsViewOld.swift in Sources */,
 				5BC1669C2BD691690020611B /* CameraView+ControlBar.swift in Sources */,
+				5BA1BF382BF6F079006E863E /* HomeView+.swift in Sources */,
 				5BFD57512BF61EC4006AABC2 /* ToolType.swift in Sources */,
 				5BFD57452BF61E79006AABC2 /* ScannerInstructionsView.swift in Sources */,
 				5BB061CC2BD96A5F00C7601B /* Previewer.swift in Sources */,
