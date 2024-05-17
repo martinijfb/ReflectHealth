@@ -33,3 +33,13 @@ class Previewer {
         container.mainContext.insert(trackDataPiece2)
     }
 }
+
+class NoDataPreviewer {
+    
+    let container: ModelContainer
+    
+    init() throws {
+        let config = ModelConfiguration(isStoredInMemoryOnly: true)
+        container = try ModelContainer(for: TrackedData.self, configurations: config)
+    }
+}
