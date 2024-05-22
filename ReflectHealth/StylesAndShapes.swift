@@ -63,3 +63,20 @@ struct TopRoundedRectangle: Shape {
         return path
     }
 }
+
+struct ToolbarTitleModifier: ViewModifier {
+    
+    func body(content: Content) -> some View {
+        content
+            .font(.largeTitle)
+            .fontDesign(.serif)
+            .fontWeight(.semibold)
+            .foregroundStyle(.lightBlue1)
+    }
+}
+
+extension View {
+    func toolbarTitleReflectStyle() -> some View {
+        self.modifier(ToolbarTitleModifier())
+    }
+}

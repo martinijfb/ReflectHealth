@@ -21,9 +21,6 @@ struct ScannerView: View {
         NavigationStack {
             VStack {
                 ZStack {
-                    
-                    
-                    
                     if vm.imageData.count == 3 {
                         scanCompletedView
                             .onAppear {
@@ -47,7 +44,7 @@ struct ScannerView: View {
                     
                 }
                 .frame(width: width, height: height)
-                .border(vm.imageData.count == 3 ? Color.clear : Color.indigo, width: 2)
+//                .border(vm.imageData.count == 3 ? Color.clear : Color.indigo, width: 2)
                 
             }
             .onAppear {

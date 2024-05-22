@@ -10,10 +10,7 @@ import SwiftUI
 extension HomeView {
     internal var reflectTitle: some View {
         Text("Reflect")
-            .font(.largeTitle)
-            .fontDesign(.serif)
-            .fontWeight(.semibold)
-            .foregroundStyle(.lightBlue1)
+            .toolbarTitleReflectStyle()
     }
     
     internal var header: some View {
