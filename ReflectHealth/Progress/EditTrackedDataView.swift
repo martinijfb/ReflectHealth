@@ -11,7 +11,7 @@ struct EditTrackedDataView: View {
     @Environment(\.dismiss) private var dismiss
     @Bindable var trackDataPiece: TrackedData
     @FocusState var textEditorInFocus
-    // Correct with a textfield
+
     var body: some View {
         ZStack {
             Gradients.customGradient.ignoresSafeArea()
@@ -41,24 +41,7 @@ struct EditTrackedDataView: View {
                     .padding(.top)
                     Spacer()
                 }
-                HStack {
-                    TextEditor(text: $trackDataPiece.notes)
-                        .focused($textEditorInFocus)
-                        .foregroundStyle(.primary)
-                        .frame(height: 80)
-                        .colorMultiply(Color(uiColor: .systemGray6))
-                        .clipShape(RoundedRectangle(cornerRadius: 10.0))
-                    
-                    if textEditorInFocus {
-                        Button {
-                            textEditorInFocus = false
-                        } label: {
-                            Image(systemName: "checkmark.circle.fill")
-                                .font(.largeTitle)
-                        }
-                    }
-                    
-                }
+                textEditorSection
                 
             }
             .padding()
@@ -96,6 +79,30 @@ extension EditTrackedDataView {
             }
         }
     }
+    
+    
+    @ViewBuilder
+    internal var textEditorSection: some View {
+            HStack {
+                TextField("Notes", text: $trackDataPiece.notes, axis: .vertical)
+                    .focused($textEditorInFocus)
+                    .padding()
+                    .lineLimit(4)
+                    .background(Color(uiColor: .systemGray6))
+                    .clipShape(RoundedRectangle(cornerRadius: 10.0))
+
+                if textEditorInFocus {
+                    Button {
+                        textEditorInFocus = false
+                    } label: {
+                        Image(systemName: "checkmark.circle.fill")
+                            .font(.largeTitle)
+                    }
+                }
+                
+            }
+    }
+
     
 }
 
