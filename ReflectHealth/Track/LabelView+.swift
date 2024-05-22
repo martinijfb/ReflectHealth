@@ -83,9 +83,9 @@ extension LabelView {
     
     @ViewBuilder
     internal var textEditorSection: some View {
-        VStack {
+//        VStack {
             HStack {
-                TextField("Notes", text: $vm.textEditorText, axis: .vertical)
+                TextField("Add notes...", text: $vm.textEditorText, axis: .vertical)
                     .focused($textEditorInFocus)
                     .padding()
                     .lineLimit(4)
@@ -104,7 +104,7 @@ extension LabelView {
                 }
                 
             }
-        }
+//        }
     }
     
     @ViewBuilder
