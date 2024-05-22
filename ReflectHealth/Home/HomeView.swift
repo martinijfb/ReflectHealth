@@ -27,7 +27,6 @@ struct HomeView: View {
                         ZStack {
                                 TopRoundedRectangle(cornerRadius: 48)
                                     .fill(.lightBlue10)
-                                    .frame(height: .infinity)
            
                             VStack {
                                 routine
