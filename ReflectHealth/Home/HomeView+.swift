@@ -17,7 +17,7 @@ extension HomeView {
         HStack {
             VStack(alignment: .leading) {
                 Group {
-                    Text("Hello").fontWeight(.light) + Text(" ") + Text(vm.user.firstName).fontWeight(.semibold)
+                    Text("Hello,").fontWeight(.light) + Text(" ") + Text(vm.user.firstName).fontWeight(.semibold)
                 }
                 .font(.largeTitle)
                 .lineLimit(1)
