@@ -12,7 +12,8 @@ import PencilKit
 struct ProgressView: View {
     @Environment(\.modelContext) var modelContext
     
-    @State private var isDateRangePickerVisible = false
+    @State private var isGridView: Bool = false
+    @State private var isDateRangePickerVisible: Bool = false
     
     @State private var sortOrder = SortDescriptor(\TrackedData.date, order: .reverse)
     @State private var startDate: Date = Calendar.current.startOfDay(for: Date()).addingTimeInterval(-86400 * 30) // 30 days ago
@@ -25,7 +26,13 @@ struct ProgressView: View {
     
     var body: some View {
         NavigationStack {
-            ProgressListingView(sort: sortOrder, startDate: startDate, endDate: endDate)
+            Group {
+                if isGridView {
+                    ProgressGridView(sort: sortOrder, startDate: startDate, endDate: endDate)
+                } else {
+                    ProgressListingView(sort: sortOrder, startDate: startDate, endDate: endDate)
+                }
+            }
                 .scrollContentBackground(.hidden)
                 .navigationTitle("Your Progress")
                 .navigationDestination(for: TrackedData.self) { trackedDataPiece in
@@ -33,6 +40,11 @@ struct ProgressView: View {
                         .navigationBarBackButtonHidden()
                 }
                 .toolbar {
+                    
+                    ToolbarItem(placement: .topBarTrailing) {
+                        Button("View", systemImage: "square.grid.3x2", action: {isGridView.toggle()})
+                    }
+                    
                     ToolbarItem(placement: .topBarLeading) {
                         Button("Track Progress", systemImage: "camera.fill", action: { selectedTab = 2})
                     }
@@ -66,7 +78,7 @@ struct ProgressView: View {
                         .presentationDragIndicator(.visible)
                 })
                 .scrollContentBackground(.hidden)
-                .background(Gradients.customGradient)
+//                .background(Gradients.customGradient)
         }
     }
     
