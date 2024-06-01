@@ -64,11 +64,56 @@ struct TopRoundedRectangle: Shape {
     }
 }
 
+
+struct BottomRoundedRectangle: Shape {
+    var cornerRadius: CGFloat
+    
+    func path(in rect: CGRect) -> Path {
+        var path = Path()
+
+        // Starting from the top left
+        path.move(to: CGPoint(x: rect.minX, y: rect.minY))
+
+        // Top edge (no rounding)
+        path.addLine(to: CGPoint(x: rect.maxX, y: rect.minY))
+
+        // Right edge
+        path.addLine(to: CGPoint(x: rect.maxX, y: rect.maxY - cornerRadius))
+
+        // Bottom right corner
+        path.addArc(center: CGPoint(x: rect.maxX - cornerRadius, y: rect.maxY - cornerRadius),
+                    radius: cornerRadius,
+                    startAngle: .degrees(0),
+                    endAngle: .degrees(90),
+                    clockwise: false)
+
+        // Bottom edge
+        path.addLine(to: CGPoint(x: rect.minX + cornerRadius, y: rect.maxY))
+
+        // Bottom left corner
+        path.addArc(center: CGPoint(x: rect.minX + cornerRadius, y: rect.maxY - cornerRadius),
+                    radius: cornerRadius,
+                    startAngle: .degrees(90),
+                    endAngle: .degrees(180),
+                    clockwise: false)
+
+        // Left edge
+        path.addLine(to: CGPoint(x: rect.minX, y: rect.minY))
+
+        // Close the path by linking back to the start point
+        path.closeSubpath()
+
+        return path
+    }
+}
+
+
+
 struct ToolbarTitleModifier: ViewModifier {
     
     func body(content: Content) -> some View {
         content
-            .font(.largeTitle)
+            .font(.title)
             .fontDesign(.serif)
             .fontWeight(.semibold)
             .foregroundStyle(.lightBlue1)

@@ -21,48 +21,71 @@ struct ProgressGridView: View {
     
     var body: some View {
         ScrollView {
-            LazyVGrid(columns: columns, spacing: 20) {
-                ForEach(trackedDataPieces) { trackedDataPiece in
-                    NavigationLink(value: trackedDataPiece) {
-                
-                            if let image = UIImage(data: trackedDataPiece.image3) {
-                                ImageLabel(image: image, drawingData: trackedDataPiece.drawing3)
-                            }
-                    }
-                }
+            LazyVGrid(columns: columns, spacing: 24) {
+                ForEach(trackedDataPieces, content: gridItem)
             }
             .padding()
         }
     }
     
     init(sort: SortDescriptor<TrackedData>, startDate: Date, endDate: Date) {
-
-        
         _trackedDataPieces = Query(filter: #Predicate {
             $0.date >= startDate && $0.date <= endDate
         }, sort: [sort])
     }
-    
 }
 
 extension ProgressGridView {
+
     @ViewBuilder
-    func ImageLabel(image: UIImage, drawingData: Data?) -> some View {
-        ZStack {
-            Image(uiImage: image)
-                .resizable()
-                .scaledToFill()
-                .clipShape(Circle())
-            
-            if let safeData = drawingData {
-                if let drawingImage = UIImage(data: safeData) {
-                    Image(uiImage: drawingImage)
-                        .resizable()
-                        .scaledToFill()
-                        .clipShape(Circle())
+    private func gridItem(_ trackedDataPiece: TrackedData) -> some View {
+        NavigationLink(value: trackedDataPiece) {
+            VStack(spacing: 0) {
+                if let image = UIImage(data: trackedDataPiece.image3) {
+                    ImageLabel(image: image, drawingData: trackedDataPiece.drawing3)
+                        .aspectRatio(1, contentMode: .fit)
                 }
+                dateText(trackedDataPiece.date)
             }
         }
+    }
+
+    @ViewBuilder
+    private func dateText(_ date: Date) -> some View {
+        VStack {
+            Text(date.formatted(date: .numeric, time: .omitted))
+            Text(date.formatted(date: .omitted, time: .shortened))
+        }
+        .padding(4)
+        .foregroundStyle(.black)
+        .fontWeight(.light)
+        .minimumScaleFactor(0.7)
+        .lineLimit(1)
+        .frame(maxWidth: .infinity)
+        .background(Color.accent.opacity(0.6))
+        .clipShape(BottomRoundedRectangle(cornerRadius: 18))
+    }
+
+    @ViewBuilder
+    func ImageLabel(image: UIImage, drawingData: Data?) -> some View {
+            ZStack {
+                Group {
+                    Image(uiImage: image)
+                        .resizable()
+                        .shadow(radius: 4, x: 4, y: 4)
+                    
+                    if let safeData = drawingData, let drawingImage = UIImage(data: safeData) {
+                        Image(uiImage: drawingImage)
+                            .resizable()
+                    }
+                }
+                .scaledToFill()
+                .clipShape(RoundedRectangle(cornerRadius: 12))
+                .padding(8)
+            }
+            .background(Color.lightBlue8)
+            .clipShape(TopRoundedRectangle(cornerRadius: 18))
+
     }
 }
 
