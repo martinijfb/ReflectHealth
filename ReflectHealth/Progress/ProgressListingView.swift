@@ -21,8 +21,8 @@ struct ProgressListingView: View {
                             Image(uiImage: image)
                                 .resizable()
                                 .scaledToFit()
-                                .clipShape(RoundedRectangle(cornerRadius: 10))
-                                .frame(width: 70, height: 70)
+                                .clipShape(RoundedRectangle(cornerRadius: 12))
+                                .frame(height: 70)
                                 
                         }
                         VStack(alignment: .leading) {
@@ -57,7 +57,7 @@ struct ProgressListingView: View {
 #Preview {
     do {
         let previewer = try Previewer()
-        return ProgressListingView(sort: SortDescriptor(\TrackedData.date), startDate: .now, endDate: .now)
+        return ProgressView(selectedTab: .constant(0))
             .modelContainer(previewer.container)
     } catch {
         return Text("Failed to create preview: \(error.localizedDescription)")

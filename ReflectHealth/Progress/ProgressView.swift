@@ -11,67 +11,57 @@ import PencilKit
 
 struct ProgressView: View {
     @Environment(\.modelContext) var modelContext
-    
-    @State private var isDateRangePickerVisible = false
-    
+    @State private var isGridView: Bool = true
+    @State private var isDateRangePickerVisible: Bool = false
     @State private var sortOrder = SortDescriptor(\TrackedData.date, order: .reverse)
     @State private var startDate: Date = Calendar.current.startOfDay(for: Date()).addingTimeInterval(-86400 * 30) // 30 days ago
-        @State private var endDate: Date = {
-            let today = Calendar.current.startOfDay(for: Date())
-            return Calendar.current.date(byAdding: .second, value: 86399, to: today)!
-        }()  // End of today
+    @State private var endDate: Date = {
+        let today = Calendar.current.startOfDay(for: Date())
+        return Calendar.current.date(byAdding: .second, value: 86399, to: today)!
+    }()  // End of today
     
     @Binding var selectedTab: Int
     
     var body: some View {
         NavigationStack {
-            ProgressListingView(sort: sortOrder, startDate: startDate, endDate: endDate)
-                .scrollContentBackground(.hidden)
-                .navigationTitle("Your Progress")
-                .navigationDestination(for: TrackedData.self) { trackedDataPiece in
-                    EditTrackedDataView(trackDataPiece: trackedDataPiece)
-                        .navigationBarBackButtonHidden()
+            Group {
+                if isGridView {
+                    ProgressGridView(sort: sortOrder, startDate: startDate, endDate: endDate)
+                } else {
+                    ProgressListingView(sort: sortOrder, startDate: startDate, endDate: endDate)
                 }
-                .toolbar {
-                    ToolbarItem(placement: .topBarLeading) {
-                        Button("Track Progress", systemImage: "camera.fill", action: { selectedTab = 2})
-                    }
-                    ToolbarItem(placement: .topBarLeading) {
-                        Button("Track Progress", systemImage: "person.crop.rectangle.badge.plus", action: addSamples).tint(Color(.systemGray5))
-                    }
-                    
-                    ToolbarItem(placement: .topBarTrailing) {
-                        Menu("Sort", systemImage: "arrow.up.arrow.down") {
-                            Picker("Sort", selection: $sortOrder) {
-                                Text("Ascending")
-                                    .tag(SortDescriptor(\TrackedData.date, order: .forward))
-                                Text("Descending")
-                                    .tag(SortDescriptor(\TrackedData.date, order: .reverse))
-                            }
-                            .pickerStyle(.inline)
-                        }
-                    }
-                    
-                    ToolbarItem(placement: .topBarTrailing) {
-                        Button {
-                            isDateRangePickerVisible = true
-                        } label: {
-                            Image(systemName: "calendar")
-                        }
-                    }
+            }
+            .navigationDestination(for: TrackedData.self) { trackedDataPiece in
+                EditTrackedDataView(trackDataPiece: trackedDataPiece)
+                    .navigationBarBackButtonHidden()
+            }
+            .toolbar {
+                
+                ToolbarItem(placement: .topBarLeading) {
+                    progressViewTitle
                 }
-                .sheet(isPresented: $isDateRangePickerVisible, content: {
-                    DateRangePickerSheet(startDate: $startDate, endDate: $endDate, isPresented: $isDateRangePickerVisible)
-                        .presentationDetents([.height(210)])
-                        .presentationDragIndicator(.visible)
-                })
-                .scrollContentBackground(.hidden)
-                .background(Gradients.customGradient)
+                
+                ToolbarItem(placement: .topBarTrailing) {
+                    gridListButton
+                }
+                
+                
+                ToolbarItem(placement: .topBarTrailing) {
+                    sortingAndFilteringMenuButton
+                }
+            }
+            .tint(.lightBlue1)
+            .sheet(isPresented: $isDateRangePickerVisible, content: {
+                DateRangePickerSheet(startDate: $startDate, endDate: $endDate, isPresented: $isDateRangePickerVisible)
+                    .presentationDetents([.height(210)])
+                    .presentationDragIndicator(.visible)
+            })
         }
     }
-    
-    
-    
+}
+
+
+extension ProgressView {
     func addSamples() {
         let image1 = UIImage(named: "pikachu")!.pngData()!
         let image2 = UIImage(named: "charizard")!.pngData()!
@@ -89,6 +79,47 @@ struct ProgressView: View {
         modelContext.insert(sample3)
         modelContext.insert(sample4)
     }
+    
+    
+// MARK: - TOOLBAR
+    
+    internal var progressViewTitle: some View {
+        Text("Your Progress")
+            .toolbarTitleReflectStyle()
+    }
+    
+    internal var gridListButton: some View {
+        Button("View Type", systemImage: isGridView ? "list.bullet" : "square.grid.3x2", action: {
+            withAnimation {
+                isGridView.toggle()
+            }
+        })
+    }
+    
+
+    internal var sortingAndFilteringMenuButton: some View {
+        Menu("Sorting and Filtering", systemImage: "ellipsis") {
+            Button("Date Range", systemImage: "calendar") {
+                isDateRangePickerVisible = true
+            }
+            Menu("Sort", systemImage: "arrow.up.arrow.down") {
+                Picker("Sort", selection: $sortOrder) {
+                    Text("Ascending")
+                        .tag(SortDescriptor(\TrackedData.date, order: .forward))
+                    Text("Descending")
+                        .tag(SortDescriptor(\TrackedData.date, order: .reverse))
+                }
+                .pickerStyle(.inline)
+            }
+            
+            Button("Track Progress", systemImage: "camera", action: { selectedTab = 2})
+            
+            // The buttonbelow is for debugging
+            Button("Add Samples", systemImage: "person.crop.rectangle.badge.plus", action: addSamples).tint(Color(.systemGray5))
+            
+        }
+    }
+    
 }
 
 #Preview {
