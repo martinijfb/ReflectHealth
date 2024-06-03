@@ -21,8 +21,8 @@ struct ProgressListingView: View {
                             Image(uiImage: image)
                                 .resizable()
                                 .scaledToFit()
-                                .clipShape(RoundedRectangle(cornerRadius: 10))
-                                .frame(width: 70, height: 70)
+                                .clipShape(RoundedRectangle(cornerRadius: 12))
+                                .frame(height: 70)
                                 
                         }
                         VStack(alignment: .leading) {

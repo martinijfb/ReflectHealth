@@ -13,48 +13,61 @@ struct EditTrackedDataView: View {
     @FocusState var textEditorInFocus
 
     var body: some View {
-        ZStack {
-            Gradients.customGradient.ignoresSafeArea()
+
             VStack {
-                Text("Your progress from:")
-                    .fontWeight(.semibold)
+ 
                 Text(trackDataPiece.date.formatted(date: .long, time: .shortened))
-                if let image1 = UIImage(data: trackDataPiece.image1),
-                   let image2 = UIImage(data: trackDataPiece.image2),
-                   let image3 =  UIImage(data: trackDataPiece.image3) {
-                    
-                    TabView {
-                        ImageLabel(image: image1, drawingData: trackDataPiece.drawing1)
-                        ImageLabel(image: image2, drawingData: trackDataPiece.drawing2)
-                        ImageLabel(image: image3, drawingData: trackDataPiece.drawing3)
-                    }
-                    .frame(maxWidth: .infinity)
-                    .tabViewStyle(.page)
-                    
-                } else {
-                    Text("Could not load the images")
-                }
+                    .font(.title2)
+                    .fontWeight(.light)
                 
-                HStack {
-                    Text("Edit you Notes:")
-                        .fontWeight(.semibold)
+                ZStack {
+                    TopRoundedRectangle(cornerRadius: 48)
+                        .fill(.lightBlue8)
+                        .ignoresSafeArea()
+                    VStack {
+                    
+                        if let image1 = UIImage(data: trackDataPiece.image1),
+                           let image2 = UIImage(data: trackDataPiece.image2),
+                           let image3 =  UIImage(data: trackDataPiece.image3) {
+                            
+                            TabView {
+                                ImageLabel(image: image1, drawingData: trackDataPiece.drawing1)
+                                ImageLabel(image: image2, drawingData: trackDataPiece.drawing2)
+                                ImageLabel(image: image3, drawingData: trackDataPiece.drawing3)
+                            }
+                            .frame(maxWidth: .infinity)
+                            .tabViewStyle(.page)
+                            
+                        } else {
+                            Text("Could not load the images")
+                        }
+                        
+                        HStack {
+                            Text("Edit you Notes:")
+                                .fontWeight(.medium)
+                            .padding(.top)
+                            Spacer()
+                        }
+                        textEditorSection
+                    }
+                    .padding()
                     .padding(.top)
-                    Spacer()
                 }
-                textEditorSection
                 
             }
-            .padding()
-            .navigationTitle("Edit Data")
-            .navigationBarTitleDisplayMode(.inline)
+//            .padding()
             .toolbar {
                 ToolbarItem(placement: .topBarLeading) {
                     Button("Back", systemImage: "chevron.backward") {
                         dismiss()
                     }
                 }
+                ToolbarItem(placement: .topBarLeading) {
+                    progressViewTitle
+                }
             }
-        }
+            .tint(.lightBlue1)
+        
         
     }
 }
@@ -85,6 +98,7 @@ extension EditTrackedDataView {
     internal var textEditorSection: some View {
             HStack {
                 TextField("Notes", text: $trackDataPiece.notes, axis: .vertical)
+                    .fontWeight(.light)
                     .focused($textEditorInFocus)
                     .padding()
                     .lineLimit(4)
@@ -103,14 +117,19 @@ extension EditTrackedDataView {
             }
     }
 
+    internal var progressViewTitle: some View {
+        Text("Your Progress")
+            .toolbarTitleReflectStyle()
+    }
+    
     
 }
 
 #Preview {
     do {
         let previewer = try Previewer()
-        return EditTrackedDataView(trackDataPiece: previewer.trackDataPiece)
-            .modelContainer(previewer.container)
+        return NavigationStack {EditTrackedDataView(trackDataPiece: previewer.trackDataPiece)
+            .modelContainer(previewer.container)}
     } catch {
         return Text("Failed to create preview: \(error.localizedDescription)")
     }

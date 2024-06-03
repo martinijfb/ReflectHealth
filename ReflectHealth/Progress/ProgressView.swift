@@ -31,7 +31,6 @@ struct ProgressView: View {
                     ProgressListingView(sort: sortOrder, startDate: startDate, endDate: endDate)
                 }
             }
-            .scrollContentBackground(.hidden)
             .navigationDestination(for: TrackedData.self) { trackedDataPiece in
                 EditTrackedDataView(trackDataPiece: trackedDataPiece)
                     .navigationBarBackButtonHidden()
