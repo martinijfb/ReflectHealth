@@ -11,7 +11,7 @@ import PencilKit
 
 struct ProgressView: View {
     @Environment(\.modelContext) var modelContext
-    @State private var isGridView: Bool = false
+    @State private var isGridView: Bool = true
     @State private var isDateRangePickerVisible: Bool = false
     @State private var sortOrder = SortDescriptor(\TrackedData.date, order: .reverse)
     @State private var startDate: Date = Calendar.current.startOfDay(for: Date()).addingTimeInterval(-86400 * 30) // 30 days ago

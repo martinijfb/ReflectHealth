@@ -36,7 +36,6 @@ struct ProgressGridView: View {
 }
 
 extension ProgressGridView {
-
     @ViewBuilder
     private func gridItem(_ trackedDataPiece: TrackedData) -> some View {
         NavigationLink(value: trackedDataPiece) {
@@ -46,6 +45,11 @@ extension ProgressGridView {
                         .aspectRatio(1, contentMode: .fit)
                 }
                 dateText(trackedDataPiece.date)
+            }
+            .background(.lightBlue10)
+            .clipShape(RoundedRectangle(cornerRadius: 18))
+            .overlay {
+                RoundedRectangle(cornerRadius: 18).stroke(.lightBlue8, lineWidth: 1)
             }
         }
     }
@@ -62,8 +66,6 @@ extension ProgressGridView {
         .minimumScaleFactor(0.7)
         .lineLimit(1)
         .frame(maxWidth: .infinity)
-        .background(Color.accent.opacity(0.6))
-        .clipShape(BottomRoundedRectangle(cornerRadius: 18))
     }
 
     @ViewBuilder
@@ -83,9 +85,6 @@ extension ProgressGridView {
                 .clipShape(RoundedRectangle(cornerRadius: 12))
                 .padding(8)
             }
-            .background(Color.lightBlue8)
-            .clipShape(TopRoundedRectangle(cornerRadius: 18))
-
     }
 }
 

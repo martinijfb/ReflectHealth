@@ -55,7 +55,6 @@ struct EditTrackedDataView: View {
                 }
                 
             }
-//            .padding()
             .toolbar {
                 ToolbarItem(placement: .topBarLeading) {
                     Button("Back", systemImage: "chevron.backward") {
