@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5B0837382C65976400352EC5 /* MainProductsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B0837372C65976400352EC5 /* MainProductsView.swift */; };
+		5B08373A2C65978A00352EC5 /* SkincareProduct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B0837392C65978A00352EC5 /* SkincareProduct.swift */; };
+		5B08373C2C6597A300352EC5 /* ApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B08373B2C6597A300352EC5 /* ApiService.swift */; };
+		5B08373E2C6597B800352EC5 /* ProductsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B08373D2C6597B800352EC5 /* ProductsViewModel.swift */; };
+		5B0837402C6597FF00352EC5 /* SearchBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B08373F2C6597FF00352EC5 /* SearchBarView.swift */; };
+		5B0837422C65982000352EC5 /* ProductNames.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B0837412C65982000352EC5 /* ProductNames.swift */; };
+		5B0837442C65985700352EC5 /* IndividualProductView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B0837432C65985700352EC5 /* IndividualProductView.swift */; };
 		5B3439422BF6E57800512FE6 /* StylesAndShapes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3439412BF6E57800512FE6 /* StylesAndShapes.swift */; };
 		5B5FE2502BDAA35C00D77431 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5FE24F2BDAA35C00D77431 /* HomeView.swift */; };
 		5B5FE2552BDBF2F100D77431 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5FE2542BDBF2F100D77431 /* HomeViewModel.swift */; };
@@ -15,6 +22,7 @@
 		5B5FE25F2BDDC71A00D77431 /* Gender.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5FE25E2BDDC71A00D77431 /* Gender.swift */; };
 		5B5FE2612BDDCBA000D77431 /* Fitzpatrick.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5FE2602BDDCBA000D77431 /* Fitzpatrick.swift */; };
 		5B8E19D72C08BD3900440DAA /* ProgressGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B8E19D62C08BD3900440DAA /* ProgressGridView.swift */; };
+		5B9E87552C3EE1EA00DA8CE4 /* AcneRegressorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B9E87542C3EE1EA00DA8CE4 /* AcneRegressorView.swift */; };
 		5BA1BF382BF6F079006E863E /* HomeView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA1BF372BF6F079006E863E /* HomeView+.swift */; };
 		5BB061BD2BD9389B00C7601B /* TrackedData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BB061BC2BD9389B00C7601B /* TrackedData.swift */; };
 		5BB061C42BD9412B00C7601B /* ProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BB061C32BD9412B00C7601B /* ProgressView.swift */; };
@@ -62,6 +70,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5B0837372C65976400352EC5 /* MainProductsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainProductsView.swift; sourceTree = "<group>"; };
+		5B0837392C65978A00352EC5 /* SkincareProduct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkincareProduct.swift; sourceTree = "<group>"; };
+		5B08373B2C6597A300352EC5 /* ApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiService.swift; sourceTree = "<group>"; };
+		5B08373D2C6597B800352EC5 /* ProductsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsViewModel.swift; sourceTree = "<group>"; };
+		5B08373F2C6597FF00352EC5 /* SearchBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarView.swift; sourceTree = "<group>"; };
+		5B0837412C65982000352EC5 /* ProductNames.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductNames.swift; sourceTree = "<group>"; };
+		5B0837432C65985700352EC5 /* IndividualProductView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndividualProductView.swift; sourceTree = "<group>"; };
 		5B3439412BF6E57800512FE6 /* StylesAndShapes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StylesAndShapes.swift; sourceTree = "<group>"; };
 		5B5FE24F2BDAA35C00D77431 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		5B5FE2542BDBF2F100D77431 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
@@ -70,6 +85,7 @@
 		5B5FE25E2BDDC71A00D77431 /* Gender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gender.swift; sourceTree = "<group>"; };
 		5B5FE2602BDDCBA000D77431 /* Fitzpatrick.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fitzpatrick.swift; sourceTree = "<group>"; };
 		5B8E19D62C08BD3900440DAA /* ProgressGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressGridView.swift; sourceTree = "<group>"; };
+		5B9E87542C3EE1EA00DA8CE4 /* AcneRegressorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcneRegressorView.swift; sourceTree = "<group>"; };
 		5BA1BF372BF6F079006E863E /* HomeView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HomeView+.swift"; sourceTree = "<group>"; };
 		5BB061BC2BD9389B00C7601B /* TrackedData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackedData.swift; sourceTree = "<group>"; };
 		5BB061C32BD9412B00C7601B /* ProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressView.swift; sourceTree = "<group>"; };
@@ -129,6 +145,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5B0837362C65969A00352EC5 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				5B0837372C65976400352EC5 /* MainProductsView.swift */,
+				5B0837392C65978A00352EC5 /* SkincareProduct.swift */,
+				5B08373B2C6597A300352EC5 /* ApiService.swift */,
+				5B08373D2C6597B800352EC5 /* ProductsViewModel.swift */,
+				5B08373F2C6597FF00352EC5 /* SearchBarView.swift */,
+				5B0837412C65982000352EC5 /* ProductNames.swift */,
+				5B0837432C65985700352EC5 /* IndividualProductView.swift */,
+			);
+			path = Products;
+			sourceTree = "<group>";
+		};
 		5B1B61E72BD6B63A00CC6091 /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -197,6 +227,7 @@
 				5BB061C92BD9699000C7601B /* EditTrackedDataView.swift */,
 				5BB061CD2BD9CE6600C7601B /* DrawingView.swift */,
 				5BB061D12BDA7B4600C7601B /* DateRangePickerSheet.swift */,
+				5B9E87542C3EE1EA00DA8CE4 /* AcneRegressorView.swift */,
 			);
 			path = Progress;
 			sourceTree = "<group>";
@@ -223,6 +254,7 @@
 				5BC166B12BD6A7860020611B /* Info.plist */,
 				5BC166932BD6901E0020611B /* Core */,
 				5B5FE2512BDAA36400D77431 /* Home */,
+				5B0837362C65969A00352EC5 /* Products */,
 				5BFD573D2BF61E1C006AABC2 /* Track */,
 				5BB061C22BD9410400C7601B /* Progress */,
 				5BB061B72BD9359800C7601B /* Entities */,
@@ -376,6 +408,7 @@
 				5BE5D02D2BE2A69E00999759 /* ScannerViewOld.swift in Sources */,
 				5BE3FE032BE2780900DF3CAC /* ScannerViewModelOld.swift in Sources */,
 				5BFD57492BF61E8D006AABC2 /* LabelView+.swift in Sources */,
+				5B0837382C65976400352EC5 /* MainProductsView.swift in Sources */,
 				5BE5D02F2BE2E27600999759 /* ScannerInstructionsViewOld.swift in Sources */,
 				5BFD574D2BF61EA6006AABC2 /* CanvasView.swift in Sources */,
 				5BC166AA2BD6933D0020611B /* CanvasViewOld.swift in Sources */,
@@ -395,28 +428,35 @@
 				5B8E19D72C08BD3900440DAA /* ProgressGridView.swift in Sources */,
 				5B5FE2592BDC83B100D77431 /* EditProfileView.swift in Sources */,
 				5BC166982BD691180020611B /* CameraViewModel.swift in Sources */,
+				5B08373A2C65978A00352EC5 /* SkincareProduct.swift in Sources */,
 				5BB061CA2BD9699000C7601B /* EditTrackedDataView.swift in Sources */,
 				5BC166872BD68FB00020611B /* ContentView.swift in Sources */,
 				5BC166AE2BD6A1150020611B /* LabelViewOld+.swift in Sources */,
 				5BFD574F2BF61EB7006AABC2 /* CanvasToolView.swift in Sources */,
 				5BB061D22BDA7B4600C7601B /* DateRangePickerSheet.swift in Sources */,
 				5B5FE25B2BDC868100D77431 /* ProfileImageSelectorView.swift in Sources */,
+				5B0837422C65982000352EC5 /* ProductNames.swift in Sources */,
 				5B3439422BF6E57800512FE6 /* StylesAndShapes.swift in Sources */,
 				5BC166A62BD692990020611B /* LabelViewModelOld.swift in Sources */,
 				5BE3FD9C2BE02BF600DF3CAC /* CanvasToolView2.swift in Sources */,
 				5BFD57472BF61E85006AABC2 /* LabelView.swift in Sources */,
 				5BB061CE2BD9CE6600C7601B /* DrawingView.swift in Sources */,
 				5BC166852BD68FB00020611B /* ReflectHealthApp.swift in Sources */,
+				5B9E87552C3EE1EA00DA8CE4 /* AcneRegressorView.swift in Sources */,
 				5BC166A82BD6930F0020611B /* ToolTypeOld.swift in Sources */,
+				5B0837442C65985700352EC5 /* IndividualProductView.swift in Sources */,
 				5B5FE2612BDDCBA000D77431 /* Fitzpatrick.swift in Sources */,
 				5BC166A42BD6923D0020611B /* View+.swift in Sources */,
 				5BFD57412BF61E59006AABC2 /* ScannerViewRepresentable.swift in Sources */,
 				5BC166AC2BD6969B0020611B /* CanvasToolsViewOld.swift in Sources */,
+				5B0837402C6597FF00352EC5 /* SearchBarView.swift in Sources */,
+				5B08373C2C6597A300352EC5 /* ApiService.swift in Sources */,
 				5BC1669C2BD691690020611B /* CameraView+ControlBar.swift in Sources */,
 				5BA1BF382BF6F079006E863E /* HomeView+.swift in Sources */,
 				5BFD57512BF61EC4006AABC2 /* ToolType.swift in Sources */,
 				5BFD57452BF61E79006AABC2 /* ScannerInstructionsView.swift in Sources */,
 				5BB061CC2BD96A5F00C7601B /* Previewer.swift in Sources */,
+				5B08373E2C6597B800352EC5 /* ProductsViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
