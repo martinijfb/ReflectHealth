@@ -23,7 +23,7 @@ struct ContentView: View {
                     .tag(0)
                 
                 
-                ContentUnavailableView("This content is not available", systemImage: "waterbottle.fill", description: Text("Sorry, at the moment the data could not be loaded"))
+                MainProductsView()
                     .tabItem {
                         Image(systemName: "waterbottle.fill")
                         Text("My Products")                }
