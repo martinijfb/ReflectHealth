@@ -9,7 +9,7 @@ import Foundation
 
 class ApiService {
     // Replace this with the local IP address of your machine running the FastAPI server
-    let baseURL = "http://192.168.68.50:8000"
+    let baseURL = "IP_ADDRESS"
     
     func fetchProducts() async throws -> [SkincareProduct] {
         guard let url = URL(string: "\(baseURL)/products") else { throw URLError(.badURL) }

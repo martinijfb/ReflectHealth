@@ -10,7 +10,7 @@ import SwiftUI
 struct AcneRegressorView: View {
     @State var prediction: String = "no Prediction Now"
     @Binding var image: UIImage?
-    let urlStringIPPort: String =  "http://192.168.0.171:8000/predict/"
+    let urlStringIPPort: String =  "IP_ADDRESS"
     var body: some View {
         VStack {
             if let image = image {

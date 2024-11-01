@@ -33,6 +33,12 @@
 		5BB061D02BD9FC0D00C7601B /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BB061CF2BD9FC0D00C7601B /* Constants.swift */; };
 		5BB061D22BDA7B4600C7601B /* DateRangePickerSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BB061D12BDA7B4600C7601B /* DateRangePickerSheet.swift */; };
 		5BB061D42BDA7E5500C7601B /* ProgressListingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BB061D32BDA7E5500C7601B /* ProgressListingView.swift */; };
+		5BB66A022C682E9B004F6B7D /* ChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BB66A012C682E9B004F6B7D /* ChatView.swift */; };
+		5BB66A052C682FF5004F6B7D /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 5BB66A042C682FF5004F6B7D /* Alamofire */; };
+		5BB66A0A2C68305F004F6B7D /* MarkdownUI in Frameworks */ = {isa = PBXBuildFile; productRef = 5BB66A092C68305F004F6B7D /* MarkdownUI */; };
+		5BB66A0C2C683087004F6B7D /* ChatViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BB66A0B2C683087004F6B7D /* ChatViewModel.swift */; };
+		5BB66A0E2C6830A5004F6B7D /* OpenAIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BB66A0D2C6830A5004F6B7D /* OpenAIService.swift */; };
+		5BB66A102C6830FD004F6B7D /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BB66A0F2C6830FD004F6B7D /* API.swift */; };
 		5BC166852BD68FB00020611B /* ReflectHealthApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC166842BD68FB00020611B /* ReflectHealthApp.swift */; };
 		5BC166872BD68FB00020611B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC166862BD68FB00020611B /* ContentView.swift */; };
 		5BC166892BD68FB40020611B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5BC166882BD68FB40020611B /* Assets.xcassets */; };
@@ -69,6 +75,19 @@
 		5BFD57542BF63116006AABC2 /* SwiftyCrop in Frameworks */ = {isa = PBXBuildFile; productRef = 5BFD57532BF63116006AABC2 /* SwiftyCrop */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		5BB66A122C68323D004F6B7D /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		5B0837372C65976400352EC5 /* MainProductsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainProductsView.swift; sourceTree = "<group>"; };
 		5B0837392C65978A00352EC5 /* SkincareProduct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkincareProduct.swift; sourceTree = "<group>"; };
@@ -96,6 +115,10 @@
 		5BB061CF2BD9FC0D00C7601B /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		5BB061D12BDA7B4600C7601B /* DateRangePickerSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateRangePickerSheet.swift; sourceTree = "<group>"; };
 		5BB061D32BDA7E5500C7601B /* ProgressListingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressListingView.swift; sourceTree = "<group>"; };
+		5BB66A012C682E9B004F6B7D /* ChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatView.swift; sourceTree = "<group>"; };
+		5BB66A0B2C683087004F6B7D /* ChatViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewModel.swift; sourceTree = "<group>"; };
+		5BB66A0D2C6830A5004F6B7D /* OpenAIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenAIService.swift; sourceTree = "<group>"; };
+		5BB66A0F2C6830FD004F6B7D /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		5BC166812BD68FB00020611B /* ReflectHealth.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ReflectHealth.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5BC166842BD68FB00020611B /* ReflectHealthApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReflectHealthApp.swift; sourceTree = "<group>"; };
 		5BC166862BD68FB00020611B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -139,6 +162,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				5BFD57542BF63116006AABC2 /* SwiftyCrop in Frameworks */,
+				5BB66A052C682FF5004F6B7D /* Alamofire in Frameworks */,
+				5BB66A0A2C68305F004F6B7D /* MarkdownUI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -232,6 +257,16 @@
 			path = Progress;
 			sourceTree = "<group>";
 		};
+		5BB66A002C682E7C004F6B7D /* Chat */ = {
+			isa = PBXGroup;
+			children = (
+				5BB66A012C682E9B004F6B7D /* ChatView.swift */,
+				5BB66A0B2C683087004F6B7D /* ChatViewModel.swift */,
+				5BB66A0D2C6830A5004F6B7D /* OpenAIService.swift */,
+			);
+			path = Chat;
+			sourceTree = "<group>";
+		};
 		5BC166782BD68FB00020611B = {
 			isa = PBXGroup;
 			children = (
@@ -256,6 +291,7 @@
 				5B5FE2512BDAA36400D77431 /* Home */,
 				5B0837362C65969A00352EC5 /* Products */,
 				5BFD573D2BF61E1C006AABC2 /* Track */,
+				5BB66A002C682E7C004F6B7D /* Chat */,
 				5BB061C22BD9410400C7601B /* Progress */,
 				5BB061B72BD9359800C7601B /* Entities */,
 				5BC166882BD68FB40020611B /* Assets.xcassets */,
@@ -263,6 +299,7 @@
 				5BC1668A2BD68FB40020611B /* Preview Content */,
 				5BB061CF2BD9FC0D00C7601B /* Constants.swift */,
 				5B3439412BF6E57800512FE6 /* StylesAndShapes.swift */,
+				5BB66A0F2C6830FD004F6B7D /* API.swift */,
 			);
 			path = ReflectHealth;
 			sourceTree = "<group>";
@@ -334,6 +371,7 @@
 				5BC1667D2BD68FB00020611B /* Sources */,
 				5BC1667E2BD68FB00020611B /* Frameworks */,
 				5BC1667F2BD68FB00020611B /* Resources */,
+				5BB66A122C68323D004F6B7D /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -342,6 +380,8 @@
 			name = ReflectHealth;
 			packageProductDependencies = (
 				5BFD57532BF63116006AABC2 /* SwiftyCrop */,
+				5BB66A042C682FF5004F6B7D /* Alamofire */,
+				5BB66A092C68305F004F6B7D /* MarkdownUI */,
 			);
 			productName = ReflectHealth;
 			productReference = 5BC166812BD68FB00020611B /* ReflectHealth.app */;
@@ -373,6 +413,8 @@
 			mainGroup = 5BC166782BD68FB00020611B;
 			packageReferences = (
 				5BFD57522BF63116006AABC2 /* XCRemoteSwiftPackageReference "SwiftyCrop" */,
+				5BB66A032C682FF5004F6B7D /* XCRemoteSwiftPackageReference "Alamofire" */,
+				5BB66A082C68305F004F6B7D /* XCRemoteSwiftPackageReference "swift-markdown-ui" */,
 			);
 			productRefGroup = 5BC166822BD68FB00020611B /* Products */;
 			projectDirPath = "";
@@ -420,6 +462,7 @@
 				5B5FE25F2BDDC71A00D77431 /* Gender.swift in Sources */,
 				5BC166A22BD692150020611B /* ControlButtonView.swift in Sources */,
 				5B5FE2502BDAA35C00D77431 /* HomeView.swift in Sources */,
+				5BB66A022C682E9B004F6B7D /* ChatView.swift in Sources */,
 				5BC166962BD690E70020611B /* CameraView.swift in Sources */,
 				5B5FE2552BDBF2F100D77431 /* HomeViewModel.swift in Sources */,
 				5BB061C42BD9412B00C7601B /* ProgressView.swift in Sources */,
@@ -434,10 +477,12 @@
 				5BC166AE2BD6A1150020611B /* LabelViewOld+.swift in Sources */,
 				5BFD574F2BF61EB7006AABC2 /* CanvasToolView.swift in Sources */,
 				5BB061D22BDA7B4600C7601B /* DateRangePickerSheet.swift in Sources */,
+				5BB66A102C6830FD004F6B7D /* API.swift in Sources */,
 				5B5FE25B2BDC868100D77431 /* ProfileImageSelectorView.swift in Sources */,
 				5B0837422C65982000352EC5 /* ProductNames.swift in Sources */,
 				5B3439422BF6E57800512FE6 /* StylesAndShapes.swift in Sources */,
 				5BC166A62BD692990020611B /* LabelViewModelOld.swift in Sources */,
+				5BB66A0C2C683087004F6B7D /* ChatViewModel.swift in Sources */,
 				5BE3FD9C2BE02BF600DF3CAC /* CanvasToolView2.swift in Sources */,
 				5BFD57472BF61E85006AABC2 /* LabelView.swift in Sources */,
 				5BB061CE2BD9CE6600C7601B /* DrawingView.swift in Sources */,
@@ -453,6 +498,7 @@
 				5B08373C2C6597A300352EC5 /* ApiService.swift in Sources */,
 				5BC1669C2BD691690020611B /* CameraView+ControlBar.swift in Sources */,
 				5BA1BF382BF6F079006E863E /* HomeView+.swift in Sources */,
+				5BB66A0E2C6830A5004F6B7D /* OpenAIService.swift in Sources */,
 				5BFD57512BF61EC4006AABC2 /* ToolType.swift in Sources */,
 				5BFD57452BF61E79006AABC2 /* ScannerInstructionsView.swift in Sources */,
 				5BB061CC2BD96A5F00C7601B /* Previewer.swift in Sources */,
@@ -602,6 +648,7 @@
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -635,6 +682,7 @@
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -672,6 +720,22 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		5BB66A032C682FF5004F6B7D /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.9.1;
+			};
+		};
+		5BB66A082C68305F004F6B7D /* XCRemoteSwiftPackageReference "swift-markdown-ui" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/gonzalezreal/swift-markdown-ui.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.3.1;
+			};
+		};
 		5BFD57522BF63116006AABC2 /* XCRemoteSwiftPackageReference "SwiftyCrop" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/benedom/SwiftyCrop";
@@ -683,6 +747,16 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		5BB66A042C682FF5004F6B7D /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5BB66A032C682FF5004F6B7D /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+		5BB66A092C68305F004F6B7D /* MarkdownUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5BB66A082C68305F004F6B7D /* XCRemoteSwiftPackageReference "swift-markdown-ui" */;
+			productName = MarkdownUI;
+		};
 		5BFD57532BF63116006AABC2 /* SwiftyCrop */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 5BFD57522BF63116006AABC2 /* XCRemoteSwiftPackageReference "SwiftyCrop" */;

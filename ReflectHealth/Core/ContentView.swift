@@ -36,6 +36,12 @@ struct ContentView: View {
                     }
                     .tag(2)
                 
+                ChatView()
+                    .tabItem {
+                        Image(systemName: "text.bubble.fill")
+                        Text("Chat")
+                    }
+                
                 ProgressView(selectedTab: $selectedTab)
                     .tabItem {
                         Image(systemName: "calendar.badge.plus")
